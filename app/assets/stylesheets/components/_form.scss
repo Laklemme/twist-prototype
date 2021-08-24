@@ -1,0 +1,13 @@
+.wrapper{
+  border-radius: 47px;
+  background: #e0e0e0;
+  box-shadow:  32px 32px 63px #bebebe,
+              -32px -32px 63px #ffffff;
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: 20px 0px;
+}
