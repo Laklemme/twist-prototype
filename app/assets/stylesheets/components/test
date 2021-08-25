@@ -1,0 +1,23 @@
+.black-button {
+''  margin: 0 auto;
+  justify-content: center;
+  flex-grow: 2;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  padding: 8px 24px;
+  box-shadow: 2px 2px 3px #a1a0a3;
+  background-color: black;
+  height: 43px;
+  width: 290px;
+  border-radius: 3px;
+  border: 3px solid black;
+  }
+  .button :hover {
+    background: linear-gradient(#e66465, #9198e5);
+    }
+
+
+<div class="form-actions">
+    <%= f.button :submit, "Log in", class: "black-button" %>
+  </div>
+<% end %>
