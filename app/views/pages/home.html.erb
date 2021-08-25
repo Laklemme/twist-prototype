@@ -1,2 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="flex">
+  <h1>Twist</h1>
+  <p>Tricky Tongue Twisters</p>
+
+  <%= image_tag 'snake.png', alt: 'Picture of a snake' %>
+
+  <!-- Links to -->
+  <%= link_to 'LOG IN', new_user_session_path, class: '' %>
+  <%= link_to 'SIGN UP', new_user_registration_path, class: '' %>
+</div>

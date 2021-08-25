@@ -1,0 +1,28 @@
+.card-for-games {
+  color: $white;
+
+  margin: 20px 20px;
+  padding: 10px;
+
+  border-radius: 7px;
+
+  // flex setting
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  // setting card font
+  font-family: $headers-font;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.card-img {
+  object-fit: fill;
+  width: 50px;
+  height: 50px;
+}
+
+.card-for-games p {
+  margin: 0;
+}
