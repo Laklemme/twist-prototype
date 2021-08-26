@@ -1,6 +1,6 @@
-<div class="wrapper-play", data-controller="display-timer">
-  <div class="wrapper-timer", data-display-timer-target="timer">
+<div class="wrapper-play" data-controller="display-timer">
+  <div class="wrapper-timer" data-display-timer-target="timer">
   </div>
   <%= image_tag 'prawn.png', alt: 'Picture of a prawn' %>
-  <button data-action="click->display_timer#pause"><i class="fas fa-pause"></i></button>
+  <button data-action="click->display-timer#pause"><i class="fas fa-pause" data-display-timer-target="symbol"></i></button>
 </div>
