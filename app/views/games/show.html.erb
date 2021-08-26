@@ -1,0 +1,29 @@
+<div class="carousel main-carousel">
+  <div class="carousel-cell carousel-center">
+    <h1><%= @game.title %></h1>
+    <iframe width="100%" height="315"
+      src="https://www.youtube.com/embed/<%= @game.video %>"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="carousel-cell">
+    <%= @game.instructions %>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci impedit, assumenda dolore libero quas architecto inventore. Sit cupiditate, magnam ducimus assumenda sapiente voluptate maiores maxime id ut, ea libero praesentium?</p>
+  </div>
+
+  <div class="carousel-cell carousel-big-font carousel-center">
+    <% case @game.difficulty
+	when 'easy' %>
+      <h2><%= @game.difficulty %></h2>
+      <i class="fas fa-lightbulb green-f"></i>
+    <% when 'medium' %>
+      <h2><%= @game.difficulty %></h2>
+      <i class="fas fa-bolt yellow-f"></i>
+    <% when 'hard' %>
+      <h2><%= @game.difficulty %></h2>
+      <i class="fas fa-bomb red-f"></i>
+    <% end %>
+  </div>
+</div>

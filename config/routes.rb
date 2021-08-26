@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     get 'options', to: 'play_sessions#options'
     get 'reward', to: 'play_sessions#reward'
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get 'dashboard', to: 'dashboards#dashboard'
 end
