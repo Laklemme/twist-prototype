@@ -5,6 +5,7 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
+    @random_game = Game.order('random()').first
   end
 
   def show; end

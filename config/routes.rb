@@ -10,4 +10,6 @@ Rails.application.routes.draw do
     get 'options', to: 'play_sessions#options'
     get 'reward', to: 'play_sessions#reward'
   end
+
+  get 'dashboard', to: 'dashboards#dashboard'
 end
