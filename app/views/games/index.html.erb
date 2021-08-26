@@ -1,43 +1,27 @@
-<!-- <% @games.each do |game| %>
-  <div class="card-for-games red">
-    <%= image_tag 'owl.png', alt: 'Picture of an owl', class: 'card-img' %>
-    <p>Game 1</p>
-  </div>
-<% end %> -->
-
 <!-- ⚠️ Change to loop if proper seeds available -->
 <div class="flex-column">
 
-  <div class="card-for-games blue">
-    <%= image_tag 'polar-bear.png', alt: 'Picture of a polar bear', class: 'card-img' %>
-    <p>Game 4</p>
-  </div>
+  <% @games.each do |game| %>
+    <%= link_to game_path(game.id), style: 'text-decoration: none' do %>
+      <div class="card-for-games <%= @bg_colors[rand(@bg_colors.length)] %>">
+        <%= image_tag game.img[6..game.img.length], class: 'card-img' %>
+        <p><%= game.title %></p>
+      </div>
+    <% end %>
+  <% end %>
 
-  <div class="card-for-games red">
-    <%= image_tag 'owl.png', alt: 'Picture of an owl', class: 'card-img' %>
-    <p>Game 1</p>
-  </div>
-
-  <div class="card-for-games yellow">
-    <%= image_tag 'prawn.png', alt: 'Picture of a prawn', class: 'card-img' %>
-    <p>Game 2</p>
-  </div>
-
-  <div class="card-for-games green">
-    <%= image_tag 'penguin.png', alt: 'Picture of a penguin', class: 'card-img' %>
-    <p>Game 3</p>
-  </div>
-
-  <div class="morph-flex fixed-to-bottom">
-    <div class="morph-div">
-      <%= link_to game_path(@random_game) do %>
-        <i class="fas fa-random"></i>
-      <% end %>
-    </div>
-    <div class="morph-div">
-      <%= link_to dashboard_path do %>
-        <i class="fas fa-trophy"></i>
-      <% end %>
+  <div class="outer-morph-div fixed-to-bottom flex-flex-flex">
+    <div class="morph-flex fixed-to-bottom">
+      <div class="morph-div">
+        <%= link_to game_path(@random_game) do %>
+          <i class="fas fa-random"></i>
+        <% end %>
+      </div>
+      <div class="morph-div">
+        <%= link_to dashboard_path do %>
+          <i class="fas fa-trophy"></i>
+        <% end %>
+      </div>
     </div>
   </div>
 
