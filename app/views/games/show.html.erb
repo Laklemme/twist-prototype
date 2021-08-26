@@ -15,15 +15,15 @@
 
   <div class="carousel-cell carousel-big-font carousel-center">
     <% case @game.difficulty
-		   when 'easy' %>
+	when 'easy' %>
       <h2><%= @game.difficulty %></h2>
       <i class="fas fa-lightbulb green-f"></i>
-		<% when 'medium' %>
+    <% when 'medium' %>
       <h2><%= @game.difficulty %></h2>
       <i class="fas fa-bolt yellow-f"></i>
     <% when 'hard' %>
       <h2><%= @game.difficulty %></h2>
-		  <i class="fas fa-bomb red-f"></i>
-		<% end %>
+      <i class="fas fa-bomb red-f"></i>
+    <% end %>
   </div>
 </div>
