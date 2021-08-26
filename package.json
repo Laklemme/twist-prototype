@@ -8,11 +8,8 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
     "bootstrap": "^5.1.0",
-<<<<<<< HEAD
     "gsap": "^3.7.1",
-=======
     "flickity": "^2.2.2",
->>>>>>> 87839ec757ac03d5a326f42b1e87227cb137a200
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
