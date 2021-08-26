@@ -7,20 +7,16 @@
   height: 100vh;
 }
 
-h1 {
-  margin-top: 2cm;
-}
-
-p {
-  margin: 3cm;
-}
-
 .hippo-button {
   background: transparent;
   width: 240px;
   border: 0;
   cursor: pointer;
   padding: 0;
+}
+
+.nostril-login {
+  color: whitesmoke;
 }
 
 .ear-left-outer, .ear-right-outer {fill:#919191;}
@@ -31,10 +27,3 @@ p {
 .freckle {fill:#7C7C7C;}
 .tongue {fill:#FF4848;}
 .tooth-left, .tooth-right {fill:#FFFFE1;}
-
-.sign-up-link {
-  font-family: #FFF9EB;
-  color: whitesmoke;
-  text-decoration: none;
-  margin: 1cm;
-}
