@@ -1,4 +1,5 @@
 class PlaySessionsController < ApplicationController
+  before_action :set_play_session, only: :reward
 
   def create
     # @play_session = PlaySession.new
@@ -12,5 +13,15 @@ class PlaySessionsController < ApplicationController
 
   def options; end
 
-  def reward; end
+  def reward
+    @balance = PlaySession.find(params[:user_id])
+
+    @balance += 1 if @play_session.completed
+  end
+
+  private
+
+  def set_play_session
+    @play_session = PlaySession.find(:id)
+  end
 end
