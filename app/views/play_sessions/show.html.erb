@@ -1,20 +1,21 @@
-<div class="circular">
-  <div class="inner"></div>
-  <div class="number">
-    <div class="wrapper-play" data-controller="display-timer">
-      <div class="wrapper-timer" data-display-timer-target="timer"></div>
-      <button data-action="click->display-timer#pause"><i class="fas fa-pause" data-display-timer-target="symbol"></i></button>
+ <div class="center-timer" data-controller="control-circle">
+  <div class="circular">
+    <div class="inner"></div>
+    <div class="number" data-insert-in-list-target="timer-number">
+      <div class="wrapper-play" data-controller="display-timer">
+        <div class="wrapper-timer" data-display-timer-target="timer"></div>
+        <button data-action="click->display-timer#pause"><i class="fas fa-pause" data-display-timer-target="symbol"></i></button>
+      </div>
+    </div>
+    <div class="circle">
+      <div class="bar left">
+          <div class="progress"></div>
+      </div>
+      <div class="bar right">
+          <div class="progress"></div>
+      </div>
     </div>
   </div>
-  <div class="circle">
-     <div class="bar left">
-        <div class="progress"></div>
-     </div>
-     <div class="bar right">
-        <div class="progress"></div>
-     </div>
-   </div>
 </div>
-
 
 <%= image_tag 'prawn.png', alt: 'Picture of a prawn' %>
