@@ -28,8 +28,8 @@ Game.create(video: '-b1nl7jO8JQ',
             difficulty: 'medium',
             img: images_array[3])
 
-Game.create(video: '-B24LqnDRb4',
-            title: 'Clicking Tongue',
-            instructions: 'Suck your tongue onto your palate and release it with a bang.',
-            difficulty: 'hard',
-            img: images_array[4])
+# Game.create(video: '-B24LqnDRb4',
+#            title: 'Clicking Tongue',
+#            instructions: 'Suck your tongue onto your palate and release it with a bang.',
+#            difficulty: 'hard',
+#            img: images_array[4])
