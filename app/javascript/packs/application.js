@@ -25,10 +25,13 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+import { initiateHippoButton } from '../components/hippo-button';
+
 import { initFlickity } from '../plugins/init_flickity';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initFlickity();
+  initiateHippoButton();
 });
