@@ -1,5 +1,7 @@
 import { Controller } from "stimulus";
 
+let running
+
 export default class extends Controller {
   static targets = ['timer', 'symbol'];
 
@@ -16,6 +18,7 @@ export default class extends Controller {
 
   runTimer() {
     this.timer = setInterval(() => {
+      running = true
       // stuff that happens every second
       const currentTime = parseInt(this.timerTarget.innerText);
       // get the current time that is on the page
@@ -32,13 +35,13 @@ export default class extends Controller {
   }
 
   pause(click) {
-    console.log(this.timer)
-    if (this.timer === 4) {
+    if (running) {
       this.timer = clearInterval(this.timer);
+      running = false
       this.symbolTarget.outerHTML = '<i class="fas fa-play" data-display-timer-target="symbol"></i>';
     } else {
-      console.log("hahahah")
       this.runTimer();
+      running = true
       this.symbolTarget.outerHTML = '<i class="fas fa-pause" data-display-timer-target="symbol"></i>';
     }
   }
