@@ -12,7 +12,6 @@
   justify-content: space-between;
 
   // setting card font
-  font-family: $headers-font;
   font-size: 40px;
   font-weight: bold;
 }
@@ -25,4 +24,5 @@
 
 .card-for-games p {
   margin: 0;
+  font-family: $headers-font;
 }
