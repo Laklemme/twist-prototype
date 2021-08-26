@@ -22,7 +22,7 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
-//import "bootstrap";
+import "bootstrap";
 
 // Internal imports, e.g:
 import { initiateHippoButton } from '../components/hippo-button';
