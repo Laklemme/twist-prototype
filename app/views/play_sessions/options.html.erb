@@ -1,20 +1,24 @@
- <div class="center-timer">
-  <div class="circular">
-    <div class="inner"></div>
-    <div class="number">
-      <div class="wrapper-play">
-        <div class="wrapper-timer">0</div>
+<div class="morph-div">
+  <div class="center-timer">
+    <div class="circular">
+      <div class="inner"></div>
+      <div class="number">
+        <div class="wrapper-play">
+          <div class="wrapper-timer">0</div>
+        </div>
+      </div>
+      <div class="circle">
+        <div class="bar left">
+            <div class="progress finished"></div>
+        </div>
+        <div class="bar right">
+            <div class="progress finished"></div>
+        </div>
       </div>
     </div>
-    <div class="circle">
-      <div class="bar left">
-          <div class="progress finished"></div>
-      </div>
-      <div class="bar right">
-          <div class="progress finished"></div>
-      </div>
+    <div class="div-padding">
+      <%= link_to 'CONTINUE', games_path, class: 'black-button div-margin'%>
+      <%= link_to 'FINISH', play_session_reward_path, class: 'black-button div-margin'%>
     </div>
   </div>
-  <%= link_to 'CONTINUE TO PLAY', games_path, class: 'black-button'%>
-  <%= link_to 'FINISH', play_session_reward_path, class: 'black-button'%>
 </div>
