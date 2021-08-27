@@ -5,6 +5,7 @@ class PlaySessionsController < ApplicationController
     @play_session = PlaySession.new
     @play_session.user = current_user
     @play_session.game = Game.find(params[:game_id])
+    @play_session.save
     # if @play_session.save
     #   flash[:notice] = ''
     # end
