@@ -3,7 +3,7 @@ import { Controller } from "stimulus";
 let running
 
 export default class extends Controller {
-  static targets = ['timer', 'symbol'];
+  static targets = ['timer', 'symbol', 'left', 'right'];
 
   connect() {
     this.initializeTimer();
@@ -36,10 +36,14 @@ export default class extends Controller {
 
   pause(click) {
     if (running) {
+      this.leftTarget.classList.add("paused")
+      this.rightTarget.classList.add("paused")
       this.timer = clearInterval(this.timer);
       running = false
       this.symbolTarget.outerHTML = '<i class="fas fa-play" data-display-timer-target="symbol"></i>';
     } else {
+      this.leftTarget.classList.remove("paused")
+      this.rightTarget.classList.remove("paused")
       this.runTimer();
       running = true
       this.symbolTarget.outerHTML = '<i class="fas fa-pause" data-display-timer-target="symbol"></i>';

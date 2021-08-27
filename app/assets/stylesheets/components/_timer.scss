@@ -54,7 +54,7 @@
 
 .circle .left .progress{
   z-index:1;
-  animation: left 4s linear both;
+  animation: left 7.5s linear both;
 }
 @keyframes left{
   100%{
@@ -67,11 +67,19 @@
 
 }
 .circle .right .progress{
-  animation: right 4s linear both;
-  animation-delay:4s;
+  animation: right 7.5s linear both;
+  animation-delay:7.5s;
 }
 @keyframes right{
   100%{
     transform: rotate(180deg);
   }
+}
+
+.paused, .circle .right .progress.paused, .circle .left .progress.paused {
+    animation-play-state:paused;
+}
+
+.progress.finished {
+  transform: rotate(180deg);
 }
