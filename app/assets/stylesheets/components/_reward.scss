@@ -1,0 +1,50 @@
+.reward-container{
+  background-image: url("/images/background.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  font-size: 5em;
+  margin-top: 1em;
+}
+
+p {
+  font-family: 'Amatic SC', 'cursive';
+  font-weight: bold;
+  font-size: 1,5em;
+  margin-top: 8em;
+}
+
+.show-results-button {
+  margin: 0 auto;
+  justify-content: center;
+  flex-grow: 2;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  padding: 8px 24px;
+  box-shadow: 2px 2px 3px #a1a0a3;
+  background-color: black;
+  height: 43px;
+  width: 290px;
+  border-radius: 3px;
+  border: 3px solid black;
+  text-decoration: none;
+}
+
+.show-results-button {
+  transition-duration: 0.4s;
+}
+
+.show-results-button:hover {
+  background-color: grey;
+  color: white;
+}
+
+.button-position {
+  margin-top: 9em;
+}
