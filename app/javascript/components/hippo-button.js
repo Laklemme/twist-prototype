@@ -6,8 +6,7 @@ import gsap from "gsap";
 // ------------
 const initiateHippoButton = () => {
 
-
-const button = document.querySelector('.hippo-button');
+  const button = document.querySelector('.hippo-button');
   if (button) {
     button.addEventListener('mouseenter', enterButton);
     button.addEventListener('mouseleave', leaveButton);
@@ -71,9 +70,7 @@ const button = document.querySelector('.hippo-button');
       eyeLeftPupil.style.transform = `translate(${posX}px, ${posY}px)`;
       eyeRightPupil.style.transform = `translate(${posX}px, ${posY}px)`;
 
-}
-
-
-}
+    }
+  }
 }
 export {initiateHippoButton}
