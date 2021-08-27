@@ -6,6 +6,14 @@
   padding: 0;
 }
 
+.home-container{
+   background-image: url("/images/background.jpg");
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 100vh;
+ }
+
 .nostril-login {
   color: whitesmoke;
 }
