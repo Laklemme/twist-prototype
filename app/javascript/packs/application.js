@@ -23,10 +23,11 @@ require("channels")
 
 // External imports
 import "bootstrap";
-
+// Stimulus
+import "controllers"
 // Internal imports, e.g:
 import { initiateHippoButton } from '../components/hippo-button';
-
+// Flickity
 import { initFlickity } from '../plugins/init_flickity';
 
 document.addEventListener('turbolinks:load', () => {
@@ -35,5 +36,3 @@ document.addEventListener('turbolinks:load', () => {
   initFlickity();
   initiateHippoButton();
 });
-
-import "controllers"
