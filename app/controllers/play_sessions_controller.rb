@@ -1,5 +1,6 @@
 class PlaySessionsController < ApplicationController
   before_action :set_play_session, only: :show
+  
   def create
     @play_session = PlaySession.new
     @play_session.user = current_user
@@ -21,5 +22,4 @@ class PlaySessionsController < ApplicationController
   def set_play_session
     @play_session = PlaySession.find(params[:id])
   end
-
 end
