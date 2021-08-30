@@ -20,6 +20,10 @@ class PlaySessionsController < ApplicationController
   def update; end
 
   def options
+    count_hash = JSON.parse($redis.get("user_id[#{current_user.id}]"))
+    $redis.set("user_id[#{current_user.id}]", { coins: count_hash.nil? ? 0 :  count_hash["coins"] + 1 }.to_json, ex: 86400)
+    @counter = count_hash["coins"]
+    
     @play_session.update(completed: true)
     @balance = @play_session.user.balance
     @balance = 0 if @balance.nil?

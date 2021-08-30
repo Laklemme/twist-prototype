@@ -1,6 +1,6 @@
 .black-button {
   margin: 0 auto;
-  justify-content: center;
+  text-align: center;
   flex-grow: 2;
   font-family: 'Josefin Sans', sans-serif;
   color: white;
@@ -20,4 +20,12 @@
 .black-button:hover {
   background-color: grey;
   color: white;
+}
+
+.back-button {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  height: 10px;
+  width: 100px;
 }
