@@ -16,7 +16,11 @@ class PlaySessionsController < ApplicationController
 
   def update; end
 
-  def options; end
+  def options
+    count_hash = JSON.parse($redis.get("user_id[#{current_user.id}]"))
+    $redis.set("user_id[#{current_user.id}]", { coins: count_hash.nil? ? 0 :  count_hash["coins"] + 1 }.to_json, ex: 86400)
+    @counter = count_hash["coins"]
+  end
 
   def reward; end
 
