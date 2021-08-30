@@ -31,9 +31,12 @@ import { initiateHippoButton } from '../components/hippo-button';
 // Flickity
 import { initFlickity } from '../plugins/init_flickity';
 
+import { initConfetti } from '../components/confetti';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initFlickity();
   initiateHippoButton();
+  initConfetti();
 });
