@@ -4,14 +4,31 @@
   <% @games.each do |game| %>
     <%= link_to game_path(game.id), style: 'text-decoration: none' do %>
       <div class="card-for-games <%= @bg_colors[rand(@bg_colors.length)] %>">
-        <%= image_tag game.img[6..game.img.length], class: 'card-img' %>
-        <p><%= game.title %></p>
+        <%= image_tag game.img[6..game.img.length], class: 'card-img-big' %>
+
+        <div class="flex-column">
+          <p><%= game.title %></p>
+
+          <div class="flex-end-last">
+            <% case game.difficulty
+              when 'easy' %>
+              <h2><%= game.difficulty %></h2>
+              <i class="fas fa-lightbulb green-f"></i>
+            <% when 'medium' %>
+              <h2><%= game.difficulty %></h2>
+              <i class="fas fa-bolt yellow-f"></i>
+            <% when 'hard' %>
+              <h2><%= game.difficulty %></h2>
+              <i class="fas fa-bomb red-f"></i>
+            <% end %>
+          </div>
+        </div>
       </div>
     <% end %>
   <% end %>
 
-  <div class="outer-morph-div fixed-to-bottom flex-flex-flex">
-    <div class="morph-flex fixed-to-bottom">
+  <div class="outer-morph-div fixed-to-bottom">
+    <div class="flex-for-cards">
       <div class="morph-div">
         <%= link_to game_path(@random_game) do %>
           <i class="fas fa-random"></i>
@@ -26,3 +43,5 @@
   </div>
 
 </div>
+
+<div class="spacer"></div>

@@ -16,7 +16,23 @@
   justify-content: center;
 }
 
+.flex-for-cards {
+  display: flex;
+  // justify-content: space-between;
+  justify-content: space-evenly;
+}
+
 .flex-flex {
   display: flex;
   align-items: center;
+}
+
+.flex-end-last {
+  align-self: flex-end;
+  justify-content: center;
+}
+
+.spacer {
+  margin-bottom: 130px; /* how high is your footer */
+  visibility: hidden;
 }
