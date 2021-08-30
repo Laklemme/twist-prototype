@@ -4,6 +4,7 @@
 
       <h1><%= @game.title %></h1>
 
+
       <iframe width="100%" height="315"
         src="https://www.youtube.com/embed/<%= @game.video %>"
         title="YouTube video player" frameborder="0"
@@ -17,6 +18,7 @@
         <%= image_tag @game.img[6..@game.img.length], class: 'card-img-big' %>
       </div>
     </div>
+
 
     <div class="carousel-cell carousel-big-font flex-column-all">
       <% case @game.difficulty
@@ -34,4 +36,5 @@
 
   </div>
   <%= link_to 'PLAY', game_play_sessions_path(@game), class: 'black-button', method: 'POST'%>
+  <%= link_to 'GO BACK', games_path, class: 'black-button back-button' %>
 </div>
