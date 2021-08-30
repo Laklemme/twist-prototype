@@ -1,8 +1,11 @@
 <div class="flex-column">
   <div class="carousel main-carousel">
     <div class="first-slide">
+    <div class="flex-column-all">
       <h1><%= @game.title %></h1>
+      <%= image_tag @game.img[6..@game.img.length], class: 'card-img-big' %>
       <p> swipe through to learn more </p>
+      </div>
     </div>
     <div class="second-slide">
       <% case @game.difficulty when 'easy' %>
@@ -23,21 +26,18 @@
       <% end %>
       <div class="instructions-container">
         <p><%= @game.instructions %></p>
-        <%= image_tag @game.img[6..@game.img.length], class: 'card-img-big' %>
       </div>
     </div>
     <div class="third-slide">
-      <p> watch this </p>
       <iframe width="100%" height="315"
         src="https://www.youtube.com/embed/<%= @game.video %>"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
       </iframe>
-      <p> and once you are ready press play </p>
     </div>
 
     <div class="carousel-cell carousel-big-font flex-column-all">
-      <p> thanks for swiping </p>
+      <p> Do the exercise while the timer is running </p>
     </div>
 
   </div>
