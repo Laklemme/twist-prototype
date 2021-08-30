@@ -1,0 +1,35 @@
+.morph-div {
+  border-radius: 10px;
+  background: #FFF9EB;
+  box-shadow:  -21px -21px 65px #cfcabe,
+             21px 21px 65px #ffffff;
+
+  //margin: 30px 50px;
+  padding: 30px 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  font-size: 25px;
+}
+
+.outer-morph-div {
+  background: #FFF9EB;
+  height: 107px;
+}
+
+.morph-div a {
+  display: flex;
+  text-decoration: none;
+}
+
+.morph-flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.fixed-to-bottom {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+}

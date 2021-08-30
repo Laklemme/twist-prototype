@@ -1,0 +1,108 @@
+.center-timer{
+  display:grid;
+  height:100%;
+  text-align: center;
+  place-items: center;
+  padding: 35px 12px;
+}
+
+.circular{
+  height:100px;
+  width: 100px;
+  position: relative;
+}
+
+.circular .inner{
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 80px;
+  margin: -40px 0 0 -40px;
+  background: $light-yellow;
+  border-radius: 100%;
+}
+
+.circular .number{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  z-index:10;
+  font-size:18px;
+  font-weight:500;
+  color: $blue;
+}
+
+.circular .bar{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: $light-yellow;
+  -webkit-border-radius: 100%;
+  clip: rect(0px, 100px, 100px, 50px);
+}
+
+.circle .bar .progress{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 100%;
+  clip: rect(0px, 50px, 100px, 0px);
+  background: $blue;
+}
+
+.circle .left .progress{
+  z-index:1;
+  animation: left 7.5s linear both;
+}
+@keyframes left{
+  100%{
+    transform: rotate(180deg);
+  }
+}
+.circle .right {
+  transform: rotate(180deg);
+  z-index:3;
+
+}
+.circle .right .progress{
+  animation: right 7.5s linear both;
+  animation-delay:7.5s;
+}
+@keyframes right{
+  100%{
+    transform: rotate(180deg);
+  }
+}
+
+.paused, .circle .right .progress.paused, .circle .left .progress.paused {
+    animation-play-state:paused;
+}
+
+.progress.finished {
+  transform: rotate(180deg);
+}
+
+.decoration-button {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+}
+
+.img-margin-top {
+  margin-top: 30px;
+}
+
+.div-padding {
+  padding: 25px 10px;
+}
+
+.div-margin {
+  margin: 25px 0px;
+}
+
+.morph-div.flex-column-all.timer-margin{
+  margin: 200px 40px;
+}

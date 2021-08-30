@@ -1,10 +1,15 @@
 class PlaySessionsController < ApplicationController
-  before_action :set_play_session, only: :reward
+  before_action :set_play_session, only: [:show, :reward]
 
   def create
-    # @play_session = PlaySession.new
-    # @play_session.user = current_user
-    # @play_session.game = params[:game_id]
+    @play_session = PlaySession.new
+    @play_session.user = current_user
+    @play_session.game = Game.find(params[:game_id])
+    @play_session.save
+    # if @play_session.save
+    #   flash[:notice] = ''
+    # end
+    redirect_to play_session_path(@play_session)
   end
 
   def show; end
@@ -22,6 +27,6 @@ class PlaySessionsController < ApplicationController
   private
 
   def set_play_session
-    @play_session = PlaySession.find(:id)
+    @play_session = PlaySession.find(params[:id])
   end
 end
