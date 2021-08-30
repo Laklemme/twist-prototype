@@ -20,10 +20,9 @@ class PlaySessionsController < ApplicationController
   def update; end
 
   def options
-    count_hash = JSON.parse($redis.get("user_id[#{current_user.id}]"))
-    $redis.set("user_id[#{current_user.id}]", { coins: count_hash.nil? ? 0 :  count_hash["coins"] + 1 }.to_json, ex: 86400)
-    @counter = count_hash["coins"]
-    
+    @get_counter = $redis.get("user_id[#{current_user.id}]")
+    set_redis_counter
+
     @play_session.update(completed: true)
     @balance = @play_session.user.balance
     @balance = 0 if @balance.nil?
@@ -35,8 +34,9 @@ class PlaySessionsController < ApplicationController
     @play_session.user.update(balance: @balance)
   end
 
-  # Add 1 coin to balance when a play_session is completed
-  def reward; end
+  def reward
+    @counter = JSON.parse($redis.get("user_id[#{current_user.id}]"))["coins"]
+  end
 
   private
 
@@ -46,6 +46,16 @@ class PlaySessionsController < ApplicationController
 
   def set_play_session
     @play_session = PlaySession.find(params[:id])
+  end
+
+  def set_redis_counter
+    number = @get_counter.nil? ? 0 : JSON.parse(@get_counter)["coins"]
+    number += case @play_session.game.difficulty
+                when 'easy' then 1
+                when 'medium' then 3
+                when 'hard' then 5
+                end
+    $redis.set("user_id[#{current_user.id}]", { coins: number }.to_json, ex: 6000)
   end
 
   def get_coins
