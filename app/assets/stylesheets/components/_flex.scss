@@ -32,6 +32,19 @@
   justify-content: center;
 }
 
+.flexy-hexi {
+  margin: 0 20px;
+}
+
+.flex-move-bottom-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-move-bottom-right a {
+  color: $white;
+}
+
 .spacer {
   margin-bottom: 130px; /* how high is your footer */
   visibility: hidden;

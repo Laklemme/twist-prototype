@@ -43,8 +43,8 @@ $block: '.hex-grid';
 
   &__content {
     position: absolute;
-    height: 50%;
-    width: 50%;
+    height: 100%;
+    width: 100%;
     font-size: 1.125rem;
     color: #111111;
     background-color: white;
@@ -100,7 +100,7 @@ $block: '.hex-grid';
 	}
 }
 
-@media screen and (min-width: 480px) and (max-width: 839px) {
+@media screen and (min-width: 0px) and (max-width: 413px) {
 	#{$block} {
 		&__list {
 			--amount: 2;
@@ -114,11 +114,30 @@ $block: '.hex-grid';
 	}
 }
 
-@media screen and (max-width: 479px) {
-	#{$block} {
-		&__list {
-      --amount: 1;
-			grid-gap: 1.5rem 3rem;
-		}
-	}
+// @media screen and (max-width: 479px) {
+// 	#{$block} {
+// 		&__list {
+//       --amount: 2;
+// 			grid-gap: 1.5rem 3rem;
+// 		}
+// 	}
+// }
+
+// hexagon symbols
+.hex-sym-big {
+  font-size: 100px;
+}
+
+.hex-sym-unlocked {
+  color: $yellow;
+  background-color: $green;
+}
+
+.hex-sym-locked {
+  color: $red;
+  background-color: $black;
+}
+
+.hex-grid__content p {
+  // font-size: 20px;
 }
