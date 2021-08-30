@@ -15,7 +15,8 @@
 
 .outer-morph-div {
   background: #FFF9EB;
-  height: 107px;
+  // height: 107px;
+  padding: 25px;
 }
 
 .morph-div a {
@@ -30,6 +31,6 @@
 
 .fixed-to-bottom {
   position: fixed;
-  bottom: 20px;
+  bottom: 0;
   width: 100%;
 }
