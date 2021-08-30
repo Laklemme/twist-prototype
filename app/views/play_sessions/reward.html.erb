@@ -1,11 +1,9 @@
 <div id="confetti"></div>
-  <div class="reward-container">
-    <h1>Congrats</h1>
-
-    <%= image_tag "giftbox.png", class:"giftbox" %>
-
-      <p> You earned 2 coins</p>
+<div class="reward-container">
+  <h1>Congrats</h1>
+  <%= image_tag "giftbox.png", class:"giftbox" %>
+  <p> You earned <%= @coins %> <i class="fas fa-coins yellow-f"></i></p>
   <div class="button-position">
     <%= link_to "SHOW RESULTS", dashboard_path, class: "show-results-button" %>
   </div>
-  </div>
+</div>
