@@ -56,7 +56,7 @@ Game.create(video: 'dTHKsBly3TE',
 
 Game.create(video: '1tk4CAH7PPM',
             title: 'Broad Tongue',
-            instructions: 'Relax your tongue as best as you can, it shoul look very broad. Now try to make it as narrow as a stick.',
+            instructions: 'Relax your tongue as best as you can, it should look very broad. Now try to make it as narrow as a stick.',
             difficulty: 'medium',
             img: images_array[7])
 
