@@ -1,6 +1,3 @@
 class DashboardsController < ApplicationController
-  def dashboard
-    # add streaks here and whatnot 👻
-
-  end
+  def dashboard; end
 end
