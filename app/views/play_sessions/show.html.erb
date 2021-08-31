@@ -1,4 +1,4 @@
-<div class="morph-div flex-column-all timer-margin fill-screen">
+<div class="morph-div flex-column-all timer-margin">
   <div class="" data-controller="display-timer">
     <div class="circular">
       <div class="inner"></div>
@@ -19,5 +19,7 @@
     </div>
     <%= image_tag @play_session.game.img[6..@play_session.game.img.length], class: 'card-img-big img-margin-top' %>
   </div>
-  <p>You will earn <%= @coins %> <i class="fas fa-coins yellow-f"></i></p>
+</div>
+<div class="flex-column-all">
+  <p class="">You will earn <%= @coins %> <i class="fas fa-coins yellow-f"></i></p>
 </div>
