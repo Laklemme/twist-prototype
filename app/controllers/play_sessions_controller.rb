@@ -22,6 +22,7 @@ class PlaySessionsController < ApplicationController
   def options
     @get_counter = $redis.get("user_id[#{current_user.id}]")
     set_redis_counter
+    
     @play_session.update(completed: true)
     @balance = @play_session.user.balance
     @balance = 0 if @balance.nil?
