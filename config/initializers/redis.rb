@@ -1,3 +1,3 @@
 # Valerie file
-url = ENV.fetch("REDISLCOUD_URL")
+url = ENV.fetch("REDISCLOUD_URL")
 $redis = Redis.new(url: url)
