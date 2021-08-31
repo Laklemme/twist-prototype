@@ -4,7 +4,7 @@ class GamesController < ApplicationController
   def index
     @games = Game.all
     @random_game = Game.order('random()').first
-    @bg_colors = %w[blue red yellow green]
+    @bg_colors = %w[green yellow red]
   end
 
   def show; end

@@ -1,5 +1,5 @@
 # Make proper seeds
-images_array = Dir["public/images/*"]
+images_array = Dir["public/images/game_images/*"]
 
 random_user1 = User.create(email: 'abc@gmail.com', password: '1234567', nickname: 'Kobolt', balance: 30)
 random_user2 = User.create(email: 'k.eilers@gmail.com', password: '111111', nickname: 'Bello', balance: 25)

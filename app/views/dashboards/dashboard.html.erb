@@ -1,4 +1,4 @@
-<div class="flex-space-between">  
+<div class="flex-space-between">
   <div>
     <i class="fas fa-coins flex-coins padding-item"></i>
     <p class="padding-p"><%= current_user.balance %></p>
@@ -110,6 +110,10 @@
 
 <div class="flex-move-bottom-right">
   <%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE' %>
+</div>
+
+<div>
+  <%= link_to 'PLAY', games_path %>
 </div>
 
 <%= @streak %>
