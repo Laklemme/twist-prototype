@@ -1,4 +1,18 @@
-<h1 class="heading-format">HEY I am DASCHBOARD!! 😵‍💫</h1>
+<div class="flex-space-between">  
+  <div>
+    <i class="fas fa-coins flex-coins padding-item"></i>
+    <p class="padding-p"><%= current_user.balance %></p>
+  </div>
+  <div>
+    <i class="fas fa-trophy flex-trophy padding-item"></i>
+    <p class="padding-p">0</p>
+  </div>
+  <div>
+    <i class="fas fa-award flex-award padding-item"></i>
+    <p class="padding-p">0</p>
+  </div>
+</div>
+
 <div class="flexy-hexi">
   <ul class="hex-grid__list flexy-hexi">
 
@@ -69,6 +83,30 @@
     </li>
   </ul>
 </div>
+
+
+<h1>LeaderBoard</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Nickname</th>
+      <th>Coins</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each_with_index do |user, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= user.nickname%></td>
+        <td><%= user.balance%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <div class="flex-move-bottom-right">
   <%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE' %>

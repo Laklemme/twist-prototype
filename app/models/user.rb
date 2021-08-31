@@ -7,4 +7,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :play_sessions
+  before_save :set_balance
+  def set_balance
+    self.balance = 0
+  end
 end
