@@ -1,48 +1,72 @@
 <h1 class="heading-format">HEY I am DASCHBOARD!! 😵‍💫</h1>
 <div class="flexy-hexi">
   <ul class="hex-grid__list flexy-hexi">
-      <li class="hex-grid__item">
-        <div class="hex-grid__content hex-sym-unlocked">
-          <p>Second</p>
-          <i class="fas fa-fire hex-sym-big"></i>
-        </div>
-      </li>
-      <li class="hex-grid__item">
-        <div class="hex-grid__content hex-sym-unlocked">
-          <p>First</p>
+
+    <li class="hex-grid__item">
+      <div class="hex-grid__content">
+        <% if @streak >= 3 %>
+          <p>#</p>
           <i class="fas fa-award hex-sym-big"></i>
-        </div>
-      </li>
-      <li class="hex-grid__item">
-        <div class="hex-grid__content hex-sym-locked">
+        <% else %>
           <i class="fas fa-lock hex-sym-big"></i>
-        </div>
-      </li>
-      <li class="hex-grid__item">
-        <div class="hex-grid__content hex-sym-locked">
+        <% end %>
+      </div>
+    </li>
+
+    <li class="hex-grid__item">
+      <div class="hex-grid__content">
+        <% if @streak >= 5 %>
+          <p>#</p>
+          <i class="fas fa-award hex-sym-big"></i>
+        <% else %>
           <i class="fas fa-lock hex-sym-big"></i>
-        </div>
-      </li>
-      <li class="hex-grid__item">
-        <div class="hex-grid__content hex-sym-locked">
+        <% end %>
+      </div>
+    </li>
+
+    <li class="hex-grid__item">
+      <div class="hex-grid__content">
+        <% if @streak >= 7 %>
+          <p>#</p>
+          <i class="fas fa-award hex-sym-big"></i>
+        <% else %>
           <i class="fas fa-lock hex-sym-big"></i>
-        </div>
-      </li>
-      <li class="hex-grid__item">
-        <div class="hex-grid__content hex-sym-locked">
+        <% end %>
+      </div>
+    </li>
+
+    <li class="hex-grid__item">
+      <div class="hex-grid__content">
+        <% if @streak >= 14 %>
+          <p>#</p>
+          <i class="fas fa-award hex-sym-big"></i>
+        <% else %>
           <i class="fas fa-lock hex-sym-big"></i>
-        </div>
-      </li>
-      <li class="hex-grid__item">
-        <div class="hex-grid__content hex-sym-locked">
+        <% end %>
+      </div>
+    </li>
+
+    <li class="hex-grid__item">
+      <div class="hex-grid__content">
+        <% if @streak >= 30 %>
+          <p>#</p>
+          <i class="fas fa-award hex-sym-big"></i>
+        <% else %>
           <i class="fas fa-lock hex-sym-big"></i>
-        </div>
-      </li>
-      <li class="hex-grid__item">
-        <div class="hex-grid__content hex-sym-locked">
+        <% end %>
+      </div>
+    </li>
+
+    <li class="hex-grid__item">
+      <div class="hex-grid__content">
+        <% if @streak >= 60 %>
+          <p>#</p>
+          <i class="fas fa-award hex-sym-big"></i>
+        <% else %>
           <i class="fas fa-lock hex-sym-big"></i>
-        </div>
-      </li>
+        <% end %>
+      </div>
+    </li>
   </ul>
 </div>
 
@@ -50,5 +74,4 @@
   <%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE' %>
 </div>
 
-
-<%= @counter %>
+<%= @streak %>
