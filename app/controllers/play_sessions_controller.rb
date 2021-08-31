@@ -55,7 +55,7 @@ class PlaySessionsController < ApplicationController
                 when 'medium' then 3
                 when 'hard' then 5
                 end
-    $redis.set("user_id[#{current_user.id}]", { coins: number }.to_json, ex: 6000)
+    $redis.set("user_id[#{current_user.id}]", { coins: number }.to_json, ex: 86400)
   end
 
   def get_coins
