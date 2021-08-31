@@ -3,7 +3,15 @@
 
   <% @games.each do |game| %>
     <%= link_to game_path(game.id), style: 'text-decoration: none' do %>
-      <div class="card-for-games <%= @bg_colors[rand(@bg_colors.length)] %>">
+      <% case game.difficulty %>
+      <% when "easy" %>
+        <% color = @bg_colors[0] %>
+      <% when "medium" %>
+        <% color = @bg_colors[1] %>
+      <% when "hard" %>
+        <% color = @bg_colors[2] %>
+      <% end %>
+      <div class="card-for-games <%= color %>">
         <%= image_tag game.img[6..game.img.length], class: 'card-img-big' %>
 
         <div class="flex-column">
@@ -13,13 +21,13 @@
             <% case game.difficulty
               when 'easy' %>
               <h2><%= game.difficulty %></h2>
-              <i class="fas fa-lightbulb green-f"></i>
+              <i class="fas fa-lightbulb"></i>
             <% when 'medium' %>
               <h2><%= game.difficulty %></h2>
-              <i class="fas fa-bolt yellow-f"></i>
+              <i class="fas fa-bolt"></i>
             <% when 'hard' %>
               <h2><%= game.difficulty %></h2>
-              <i class="fas fa-bomb red-f"></i>
+              <i class="fas fa-bomb"></i>
             <% end %>
           </div>
         </div>
