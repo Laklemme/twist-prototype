@@ -9,6 +9,6 @@ class User < ApplicationRecord
   has_many :play_sessions
   before_save :set_balance
   def set_balance
-    self.balance = 0
+    self.balance = balance.nil? ? 0 : balance
   end
 end
