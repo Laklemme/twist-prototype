@@ -1,4 +1,28 @@
-.heading-format {
-  margin-bottom: 25px;
-  text-align: center;
+.flex-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-coins {
+  color: $yellow;
+  font-size: x-large;
+}
+
+.flex-trophy {
+  color: $red;
+  font-size: x-large;
+}
+
+.flex-award {
+  color: $green;
+  font-size: x-large;
+}
+
+.padding-item {
+  padding: 10px 10px;
+}
+
+.padding-p {
+  padding: 0px 10px 10px 15px;
 }
