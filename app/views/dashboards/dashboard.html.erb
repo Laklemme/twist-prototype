@@ -46,6 +46,36 @@
   </ul>
 </div>
 
+
+<h1>LeaderBoard</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Nickname</th>
+      <th>Coins</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each_with_index do |user, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= user.nickname%></td>
+        <td><%= user.balance%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
+
 <div class="flex-move-bottom-right">
   <%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE' %>
 </div>
