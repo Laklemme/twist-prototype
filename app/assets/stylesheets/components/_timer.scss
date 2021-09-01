@@ -95,14 +95,16 @@
   margin-top: 30px;
 }
 
-.div-padding {
-  padding: 25px 10px;
+.flex-end {
+  margin-bottom: 25px;
+  align-self: flex-end;
 }
 
 .div-margin {
   margin: 25px 0px;
 }
 
-.morph-div.flex-column-all.timer-margin{
-  margin: 200px 40px;
+.morph-div-no-padding.flex-column-all.timer-margin{
+  margin: 20px 50px 20px 50px;
+  height: 90vh;
 }
