@@ -17,14 +17,14 @@
         <div class="flex-column">
           <p><%= game.title %></p>
 
-          <div class="flex-end-last">
+          <div class="flex-end-last flex-column">
             <% case game.difficulty
               when 'easy' %>
               <h2><%= game.difficulty %></h2>
               <i class="fas fa-lightbulb"></i>
             <% when 'medium' %>
               <h2><%= game.difficulty %></h2>
-              <i class="fas fa-bolt"></i>
+              <i class="fas fa-bolt flex-end-last"></i>
             <% when 'hard' %>
               <h2><%= game.difficulty %></h2>
               <i class="fas fa-bomb"></i>
