@@ -1,5 +1,4 @@
 meta_product_name: "Twist"
 meta_title: "Twist - tricky tongue twister"
 meta_description: "a motivating and fun app for children with a myofunctional disorder"
-meta_image: "" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+meta_image: "favicon-32x32.png" # should exist in `app/assets/images/`
