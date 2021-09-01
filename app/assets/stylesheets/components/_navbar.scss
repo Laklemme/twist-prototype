@@ -10,3 +10,11 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+#myTab {
+position: fixed;
+bottom: 0;
+width: 100%;
+z-index: 100;
+background: pink;
+}
