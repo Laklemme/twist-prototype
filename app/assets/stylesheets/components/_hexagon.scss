@@ -100,7 +100,7 @@ $block: '.hex-grid';
 	}
 }
 
-@media screen and (min-width: 0px) and (max-width: 413px) {
+@media screen and (min-width: 0px) and (max-width: 414px) {
 	#{$block} {
 		&__list {
 			--amount: 2;
@@ -114,7 +114,7 @@ $block: '.hex-grid';
 	}
 }
 
-// @media screen and (max-width: 479px) {
+// @media screen and (max-width: 413px) {
 // 	#{$block} {
 // 		&__list {
 //       --amount: 2;
