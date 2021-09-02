@@ -1,16 +1,24 @@
 .morph-div {
   border-radius: 10px;
   background: #FFF9EB;
-  box-shadow:  -21px -21px 65px #cfcabe,
-             21px 21px 65px #ffffff;
+  box-shadow:  20px 20px 65px #e3ded1,
+             -20px -20px 65px #ffffff;
 
   //margin: 30px 50px;
   padding: 30px 30px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  text-decoration: none;
 
   font-size: 25px;
+}
+
+.morph-div:hover {
+  border-radius: 10px;
+  background: #FFF9EB;
+  box-shadow: inset 31px 31px 73px #f2eddf,
+            inset -31px -31px 73px #fffff7;
 }
 
 .outer-morph-div {
@@ -19,10 +27,10 @@
   padding: 25px;
 }
 
-.morph-div a {
-  display: flex;
-  text-decoration: none;
-}
+// .morph-div a {
+//   display: flex;
+//   text-decoration: none;
+// }
 
 .morph-flex {
   display: flex;
@@ -36,10 +44,10 @@
 }
 
 .morph-div-no-padding {
-  border-radius: 10px;
+  border-radius: 50px;
   background: #FFF9EB;
-  box-shadow:  -21px -21px 65px #cfcabe,
-             21px 21px 65px #ffffff;
+  box-shadow:  20px 20px 65px #e3ded1,
+             -20px -20px 65px #ffffff;
   display: flex;
   justify-content: space-around;
   align-items: center;

@@ -1,112 +1,115 @@
-<div class="flex-space-between">
-  <div>
-    <i class="fas fa-coins flex-coins padding-item"></i>
-    <p class="padding-p"><%= current_user.balance %></p>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="streaks" role="tabpanel" aria-labelledby="streaks-tab">
+
+    <div class="flexy-hexi">
+      <ul class="hex-grid__list flexy-hexi">
+
+        <li class="hex-grid__item">
+          <div class="hex-grid__content">
+            <% if @streak >= 3 %>
+              <p>#</p>
+              <i class="fas fa-award hex-sym-big"></i>
+            <% else %>
+              <i class="fas fa-lock hex-sym-big"></i>
+            <% end %>
+          </div>
+        </li>
+
+        <li class="hex-grid__item">
+          <div class="hex-grid__content">
+            <% if @streak >= 5 %>
+              <p>#</p>
+              <i class="fas fa-award hex-sym-big"></i>
+            <% else %>
+              <i class="fas fa-lock hex-sym-big"></i>
+            <% end %>
+          </div>
+        </li>
+
+        <li class="hex-grid__item">
+          <div class="hex-grid__content">
+            <% if @streak >= 7 %>
+              <p>#</p>
+              <i class="fas fa-award hex-sym-big"></i>
+            <% else %>
+              <i class="fas fa-lock hex-sym-big"></i>
+            <% end %>
+          </div>
+        </li>
+
+        <li class="hex-grid__item">
+          <div class="hex-grid__content">
+            <% if @streak >= 14 %>
+              <p>#</p>
+              <i class="fas fa-award hex-sym-big"></i>
+            <% else %>
+              <i class="fas fa-lock hex-sym-big"></i>
+            <% end %>
+          </div>
+        </li>
+
+        <li class="hex-grid__item">
+          <div class="hex-grid__content">
+            <% if @streak >= 30 %>
+              <p>#</p>
+              <i class="fas fa-award hex-sym-big"></i>
+            <% else %>
+              <i class="fas fa-lock hex-sym-big"></i>
+            <% end %>
+          </div>
+        </li>
+
+        <li class="hex-grid__item">
+          <div class="hex-grid__content">
+            <% if @streak >= 60 %>
+              <p>#</p>
+              <i class="fas fa-award hex-sym-big"></i>
+            <% else %>
+              <i class="fas fa-lock hex-sym-big"></i>
+            <% end %>
+          </div>
+        </li>
+      </ul>
+    </div>
+
   </div>
-  <div>
-    <i class="fas fa-trophy flex-trophy padding-item"></i>
-    <p class="padding-p">0</p>
+  <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">
+    <div class="flex-column-all view-height">
+      <h1>LeaderBoard</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Nickname</th>
+            <th>Coins</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @users.each_with_index do |user, index| %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= user.nickname%></td>
+              <td><%= user.balance%></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div>
-    <i class="fas fa-award flex-award padding-item"></i>
-    <p class="padding-p">0</p>
+
+  <div class="tab-pane fade" id="toni" role="tabpanel" aria-labelledby="toni-tab">
+    <div class="flex-column-all view-height">
+      <h2>Repetition</h2>
+      <ul>
+        <% @games.each do |game| %>
+          <li><%= game.title %> - <%= game.current_repetition(current_user) %> / <%= game.repetition_streak(current_user) %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
+
 </div>
-
-<div class="flexy-hexi">
-  <ul class="hex-grid__list flexy-hexi">
-
-    <li class="hex-grid__item">
-      <div class="hex-grid__content">
-        <% if @streak >= 3 %>
-          <p>#</p>
-          <i class="fas fa-award hex-sym-big"></i>
-        <% else %>
-          <i class="fas fa-lock hex-sym-big"></i>
-        <% end %>
-      </div>
-    </li>
-
-    <li class="hex-grid__item">
-      <div class="hex-grid__content">
-        <% if @streak >= 5 %>
-          <p>#</p>
-          <i class="fas fa-award hex-sym-big"></i>
-        <% else %>
-          <i class="fas fa-lock hex-sym-big"></i>
-        <% end %>
-      </div>
-    </li>
-
-    <li class="hex-grid__item">
-      <div class="hex-grid__content">
-        <% if @streak >= 7 %>
-          <p>#</p>
-          <i class="fas fa-award hex-sym-big"></i>
-        <% else %>
-          <i class="fas fa-lock hex-sym-big"></i>
-        <% end %>
-      </div>
-    </li>
-
-    <li class="hex-grid__item">
-      <div class="hex-grid__content">
-        <% if @streak >= 14 %>
-          <p>#</p>
-          <i class="fas fa-award hex-sym-big"></i>
-        <% else %>
-          <i class="fas fa-lock hex-sym-big"></i>
-        <% end %>
-      </div>
-    </li>
-
-    <li class="hex-grid__item">
-      <div class="hex-grid__content">
-        <% if @streak >= 30 %>
-          <p>#</p>
-          <i class="fas fa-award hex-sym-big"></i>
-        <% else %>
-          <i class="fas fa-lock hex-sym-big"></i>
-        <% end %>
-      </div>
-    </li>
-
-    <li class="hex-grid__item">
-      <div class="hex-grid__content">
-        <% if @streak >= 60 %>
-          <p>#</p>
-          <i class="fas fa-award hex-sym-big"></i>
-        <% else %>
-          <i class="fas fa-lock hex-sym-big"></i>
-        <% end %>
-      </div>
-    </li>
-  </ul>
-</div>
-
-
-<h1>LeaderBoard</h1>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Position</th>
-      <th>Nickname</th>
-      <th>Coins</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each_with_index do |user, index| %>
-      <tr>
-        <td><%= index + 1 %></td>
-        <td><%= user.nickname%></td>
-        <td><%= user.balance%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <div class="flex-move-bottom-right">
   <%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE' %>
@@ -116,4 +119,28 @@
   <%= link_to 'PLAY', games_path %>
 </div>
 
-<%= @streak %>
+
+<ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="streaks-tab" data-toggle="tab" href="#streaks" role="tab" aria-controls="streaks" aria-selected="true">
+      <div>
+        <i class="fas fa-trophy flex-trophy padding-item"></i>
+      </div>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="leaderboard-tab" data-toggle="tab" href="#leaderboard" role="tab" aria-controls="leaderboard" aria-selected="false">
+      <div class="flex-for-cards">
+        <i class="fas fa-coins flex-coins padding-item"></i>
+        <p class="padding-p"><%= current_user.balance %></p>
+      </div>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="toni-tab" data-toggle="tab" href="#toni" role="tab" aria-controls="toni" aria-selected="false">
+      <div>
+        <i class="fas fa-award flex-award padding-item"></i>
+      </div>
+    </a>
+  </li>
+</ul>

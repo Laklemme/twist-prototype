@@ -20,9 +20,18 @@ class PlaySessionsController < ApplicationController
   def update; end
 
   def options
+    @play_sessions_count = @play_session.game.play_sessions.where(user: current_user).count
+    @repetition_streaks = @play_session.game.repetition_streak(current_user)
+    flash.now[:notice] =  if @play_sessions_count.to_i == @repetition_streaks.to_i
+                            "Wow! Streak of #{@play_sessions_count}! 🎉"
+                          else
+                            "You played this game #{@play_sessions_count} time(s).
+                            Play #{@repetition_streaks.to_i - @play_sessions_count.to_i} more time(s) to get a streak!"
+                          end
+
     @get_counter = $redis.get("user_id[#{current_user.id}]")
     set_redis_counter
-    
+
     @play_session.update(completed: true)
     @balance = @play_session.user.balance
     @balance = 0 if @balance.nil?

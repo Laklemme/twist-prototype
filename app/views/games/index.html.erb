@@ -11,20 +11,20 @@
       <% when "hard" %>
         <% color = @bg_colors[2] %>
       <% end %>
-      <div class="card-for-games <%= color %>">
+      <div class="card-for-games <%= color %> black-text">
         <%= image_tag game.img[6..game.img.length], class: 'card-img-big' %>
 
         <div class="flex-column">
           <p><%= game.title %></p>
 
-          <div class="flex-end-last">
+          <div class="flex-end-last flex-column">
             <% case game.difficulty
               when 'easy' %>
               <h2><%= game.difficulty %></h2>
               <i class="fas fa-lightbulb"></i>
             <% when 'medium' %>
               <h2><%= game.difficulty %></h2>
-              <i class="fas fa-bolt"></i>
+              <i class="fas fa-bolt flex-end-last"></i>
             <% when 'hard' %>
               <h2><%= game.difficulty %></h2>
               <i class="fas fa-bomb"></i>
@@ -37,16 +37,16 @@
 
   <div class="outer-morph-div fixed-to-bottom">
     <div class="flex-for-cards">
-      <div class="morph-div">
-        <%= link_to game_path(@random_game) do %>
-          <i class="fas fa-random"></i>
-        <% end %>
-      </div>
-      <div class="morph-div">
-        <%= link_to dashboard_path do %>
-          <i class="fas fa-trophy"></i>
-        <% end %>
-      </div>
+      <%= link_to game_path(@random_game) do %>
+        <div class="morph-div">
+            <i class="fas fa-random"></i>
+        </div>
+      <% end %>
+      <%= link_to dashboard_path do %>
+        <div class="morph-div">
+            <i class="fas fa-trophy"></i>
+        </div>
+      <% end %>
     </div>
   </div>
 
