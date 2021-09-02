@@ -1,13 +1,19 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="streaks" role="tabpanel" aria-labelledby="streaks-tab">
 
-    <div class="flexy-hexi">
+    <div class="flexy-hexi-zwei">
+      <h1>STREAKS</h1>
+      <p>Unlock streaks by playing daily.</p>
       <ul class="hex-grid__list flexy-hexi">
 
         <li class="hex-grid__item">
-          <div class="hex-grid__content">
+          <% if @streak >= 3 %>
+            <div class="hex-grid__content" id="hex-sym-unlocked">
+          <% else %>
+            <div class="hex-grid__content" id="hex-sym-locked">
+          <% end %>
             <% if @streak >= 3 %>
-              <p>#</p>
+              <p>3 days</p>
               <i class="fas fa-award hex-sym-big"></i>
             <% else %>
               <i class="fas fa-lock hex-sym-big"></i>
@@ -16,9 +22,13 @@
         </li>
 
         <li class="hex-grid__item">
-          <div class="hex-grid__content">
+          <% if @streak >= 5 %>
+            <div class="hex-grid__content" id="hex-sym-unlocked">
+          <% else %>
+            <div class="hex-grid__content" id="hex-sym-locked">
+          <% end %>
             <% if @streak >= 5 %>
-              <p>#</p>
+              <p>5 days</p>
               <i class="fas fa-award hex-sym-big"></i>
             <% else %>
               <i class="fas fa-lock hex-sym-big"></i>
@@ -27,9 +37,13 @@
         </li>
 
         <li class="hex-grid__item">
-          <div class="hex-grid__content">
+          <% if @streak >= 7 %>
+            <div class="hex-grid__content" id="hex-sym-unlocked">
+          <% else %>
+            <div class="hex-grid__content" id="hex-sym-locked">
+          <% end %>
             <% if @streak >= 7 %>
-              <p>#</p>
+              <p>7 days</p>
               <i class="fas fa-award hex-sym-big"></i>
             <% else %>
               <i class="fas fa-lock hex-sym-big"></i>
@@ -38,9 +52,13 @@
         </li>
 
         <li class="hex-grid__item">
-          <div class="hex-grid__content">
+          <% if @streak >= 14 %>
+            <div class="hex-grid__content" id="hex-sym-unlocked">
+          <% else %>
+            <div class="hex-grid__content" id="hex-sym-locked">
+          <% end %>
             <% if @streak >= 14 %>
-              <p>#</p>
+              <p>14 days</p>
               <i class="fas fa-award hex-sym-big"></i>
             <% else %>
               <i class="fas fa-lock hex-sym-big"></i>
@@ -49,9 +67,13 @@
         </li>
 
         <li class="hex-grid__item">
-          <div class="hex-grid__content">
+          <% if @streak >= 30 %>
+            <div class="hex-grid__content" id="hex-sym-unlocked">
+          <% else %>
+            <div class="hex-grid__content" id="hex-sym-locked">
+          <% end %>
             <% if @streak >= 30 %>
-              <p>#</p>
+              <p>30 days</p>
               <i class="fas fa-award hex-sym-big"></i>
             <% else %>
               <i class="fas fa-lock hex-sym-big"></i>
@@ -60,9 +82,13 @@
         </li>
 
         <li class="hex-grid__item">
-          <div class="hex-grid__content">
+          <% if @streak >= 60 %>
+            <div class="hex-grid__content" id="hex-sym-unlocked">
+          <% else %>
+            <div class="hex-grid__content" id="hex-sym-locked">
+          <% end %>
             <% if @streak >= 60 %>
-              <p>#</p>
+              <p>60 days</p>
               <i class="fas fa-award hex-sym-big"></i>
             <% else %>
               <i class="fas fa-lock hex-sym-big"></i>
@@ -107,7 +133,7 @@
             <div class="card-for-games-font-size <%= @streak_colors.shuffle[0] %>">
               <%= image_tag game.img[6..game.img.length], class: 'card-img-big' %>
               <div class="text-align-end">
-                <p><%= game.title %> <br> <%= @current_repetition = game.repetition_streak(current_user) %> / <%= @streak_goal = game.current_repetition(current_user) %></p>
+                <p><%= game.title %> <br> <%= @streak_goal = game.current_repetition(current_user) %> / <%= @current_repetition = game.repetition_streak(current_user) %></p>
                 <% if @current_repetition.to_i  == @streak_goal.to_i %>
                   <i class="fas fa-award flex-award padding-item white-f"></i>
                 <% end %>
