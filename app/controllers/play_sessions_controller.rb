@@ -23,7 +23,7 @@ class PlaySessionsController < ApplicationController
     @play_sessions_count = @play_session.game.play_sessions.where(user: current_user).count
     @repetition_streaks = @play_session.game.repetition_streak(current_user)
     flash.now[:notice] =  if @play_sessions_count.to_i == @repetition_streaks.to_i
-                            "Wow! Streak of #{@play_sessions_count}! 🎉"
+                            "Wow! Streak of #{@play_sessions_count}! 🎉 You just earned 5 more coins!"
                           else
                             "You played this game #{@play_sessions_count} time(s).
                             Play #{@repetition_streaks.to_i - @play_sessions_count.to_i} more time(s) to get a streak!"
@@ -40,6 +40,7 @@ class PlaySessionsController < ApplicationController
                 when 'medium' then 3
                 when 'hard' then 5
                 end
+    check_repetition_streak(@play_sessions_count, @repetition_streak)
     @play_session.user.update(balance: @balance)
   end
 
@@ -58,20 +59,35 @@ class PlaySessionsController < ApplicationController
   end
 
   def set_redis_counter
-    number = @get_counter.nil? ? 0 : JSON.parse(@get_counter)["coins"]
-    number += case @play_session.game.difficulty
+    @number = @get_counter.nil? ? 0 : JSON.parse(@get_counter)["coins"]
+    @play_sessions_count = @play_session.game.play_sessions.where(user: current_user).count
+    @repetition_streaks = @play_session.game.repetition_streak(current_user)
+    @number += case @play_session.game.difficulty
                 when 'easy' then 1
                 when 'medium' then 3
                 when 'hard' then 5
-                end
-    $redis.set("user_id[#{current_user.id}]", { coins: number }.to_json, ex: 86400)
+              end
+    check_repetition_streak_redis(@play_sessions_count, @repetition_streaks)
+    $redis.set("user_id[#{current_user.id}]", { coins: @number }.to_json, ex: 86_400)
   end
 
   def get_coins
     @coins = case @play_session.game.difficulty
-             when 'easy' then 1
-             when 'medium' then 3
-             when 'hard' then 5
+              when 'easy' then 1
+              when 'medium' then 3
+              when 'hard' then 5
              end
+  end
+
+  def check_repetition_streak(play_sessions_count, repetition_streaks)
+    if play_sessions_count.to_i == repetition_streaks.to_i
+      @balance += 5
+    end
+  end
+
+  def check_repetition_streak_redis(play_sessions_count, repetition_streaks)
+    if play_sessions_count.to_i == repetition_streaks.to_i
+      @number += 5
+    end
   end
 end
