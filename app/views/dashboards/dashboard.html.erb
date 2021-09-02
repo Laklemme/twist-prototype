@@ -103,7 +103,12 @@
       <h2>Repetition</h2>
       <ul>
         <% @games.each do |game| %>
-          <li><%= game.title %> - <%= game.current_repetition(current_user) %> / <%= game.repetition_streak(current_user) %></li>
+          <li>
+          <%= game.title %> - <%= @current_repetition = game.current_repetition(current_user) %> / <%= @streak_goal = game.repetition_streak(current_user) %>
+          <% if @current_repetition.to_i == @streak_goal.to_i %>
+            <i class="fas fa-award flex-award padding-item"></i>
+          <% end %>
+          </li>
         <% end %>
       </ul>
     </div>
