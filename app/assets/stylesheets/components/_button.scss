@@ -1,5 +1,5 @@
 .black-button {
-  margin: 0 auto;
+  // margin: 0 auto;
   text-align: center;
   flex-grow: 2;
   font-family: 'Josefin Sans', sans-serif;
@@ -11,12 +11,13 @@
   width: 215px;
   border-radius: 3px;
   border: 3px solid black;
-  text-decoration: none;
-  }
+  text-decoration: none !important;
+}
 
 .black-button {
   transition-duration: 0.4s;
 }
+
 .black-button:hover {
   background-color: grey;
   color: white;

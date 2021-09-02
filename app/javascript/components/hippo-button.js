@@ -8,8 +8,27 @@ const initiateHippoButton = () => {
 
   const button = document.querySelector('.hippo-button');
   if (button) {
-    button.addEventListener('mouseenter', enterButton);
-    button.addEventListener('mouseleave', leaveButton);
+    // document.getElementById("home-hippo-text").addEventListener("click", () => {
+    // button.addEventListener('mouseenter', enterButton);
+    // button.addEventListener('mouseleave', leaveButton);
+    button.addEventListener('click', (event) =>{
+      const mouthSpeed = 0.1;
+      const easeType = "power2";
+      const mouthOpen = gsap.timeline({ paused: true, Time: 10000, totalDuration: 10000 });
+      mouthOpen.to('.mouth-back', mouthSpeed, { ease: easeType, y: -70 }, 0);
+      mouthOpen.to('.tongue', mouthSpeed + (mouthSpeed * 0.50), { ease: easeType, y: -70 }, 0);
+      mouthOpen.to('.teeth', mouthSpeed, { ease: easeType, y: -70, scaleY: 1.2 }, 0);
+      mouthOpen.to('.body', mouthSpeed, { ease: easeType, scaleY: 1.06, transformOrigin: 'center bottom' }, 0);
+      mouthOpen.to('.freckles', mouthSpeed, { ease: easeType, y: -10 }, 0);
+      mouthOpen.to('.ears', mouthSpeed, { ease: easeType, y: 6 }, 0);
+      mouthOpen.to('.eye-right', mouthSpeed, { ease: easeType, x: -2 }, 0);
+      mouthOpen.to('.eye-left', mouthSpeed, { ease: easeType, x: 2 }, 0);
+      mouthOpen.to('.eyes', mouthSpeed, { ease: easeType, y: 2 }, 0);
+      mouthOpen.to('.nostrils', mouthSpeed, { ease: easeType, y: -6 }, 0);
+      mouthOpen.play()
+      event.preventDefault()
+      setTimeout(function () { window.location.pathname = '/users/sign_in'; }, 1500);
+    })
 
     function enterButton() { mouthOpen.play(); }
     function leaveButton() { mouthOpen.reverse(); }
@@ -18,19 +37,7 @@ const initiateHippoButton = () => {
     // Hover animaton
     // --------------
 
-    const mouthSpeed = 0.3;
-    const easeType = "power2";
-    const mouthOpen = gsap.timeline({ paused: true });
-    mouthOpen.to('.mouth-back', mouthSpeed, { ease: easeType, y: -70 }, 0);
-    mouthOpen.to('.tongue', mouthSpeed + (mouthSpeed * 0.50), { ease: easeType, y: -70 }, 0);
-    mouthOpen.to('.teeth', mouthSpeed, { ease: easeType, y: -70, scaleY: 1.2 }, 0);
-    mouthOpen.to('.body', mouthSpeed, { ease: easeType, scaleY: 1.06, transformOrigin: 'center bottom' }, 0);
-    mouthOpen.to('.freckles', mouthSpeed, { ease: easeType, y: -10 }, 0);
-    mouthOpen.to('.ears', mouthSpeed, { ease: easeType, y: 6 }, 0);
-    mouthOpen.to('.eye-right', mouthSpeed, { ease: easeType, x: -2 }, 0);
-    mouthOpen.to('.eye-left', mouthSpeed, { ease: easeType, x: 2 }, 0);
-    mouthOpen.to('.eyes', mouthSpeed, { ease: easeType, y: 2 }, 0);
-    mouthOpen.to('.nostrils', mouthSpeed, { ease: easeType, y: -6 }, 0);
+
 
     // ----------
     // Ear wiggle
@@ -69,8 +76,8 @@ const initiateHippoButton = () => {
 
       eyeLeftPupil.style.transform = `translate(${posX}px, ${posY}px)`;
       eyeRightPupil.style.transform = `translate(${posX}px, ${posY}px)`;
-
     }
+    // })
   }
 }
 export {initiateHippoButton}
