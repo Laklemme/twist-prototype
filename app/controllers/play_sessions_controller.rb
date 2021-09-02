@@ -41,6 +41,7 @@ class PlaySessionsController < ApplicationController
                 when 'hard' then 5
                 end
     @play_session.user.update(balance: @balance)
+    raise
   end
 
   def reward
