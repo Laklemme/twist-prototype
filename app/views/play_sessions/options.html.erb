@@ -18,8 +18,11 @@
     </div>
     <i class="fas fa-thumbs-up big-icon green-f"></i>
     <div class="flex-end flex-column-all">
-      <%= link_to 'CONTINUE', games_path, class: 'black-button'%>
-      <%= link_to 'FINISH', play_session_reward_path, class: 'black-button'%>
+      <%= link_to 'REPLAY', game_path(@play_session.game_id), class: 'black-button' %>
+      <br>
+      <%= link_to 'OTHER GAME', games_path, class: 'black-button' %>
+      <br>
+      <%= link_to 'FINISH', play_session_reward_path, class: 'black-button' %>
     </div>
   </div>
 </div>
