@@ -42,7 +42,6 @@ class PlaySessionsController < ApplicationController
                 end
     check_repetition_streak(@play_sessions_count, @repetition_streak)
     @play_session.user.update(balance: @balance)
-    raise
   end
 
   def reward
