@@ -7,6 +7,11 @@
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border-radius: 4px;
   margin: 8px;
+  width: 75vw
+}
+
+.flash p {
+  margin: 0 !important;
 }
 
 .flash-success {
@@ -21,6 +26,6 @@
   border: 2px solid $red;
 }
 
-.flash a {
-  margin-left: 50px;
+.flash-margin {
+  margin-left: 20px;
 }
