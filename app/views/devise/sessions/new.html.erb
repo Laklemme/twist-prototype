@@ -1,6 +1,6 @@
 <div class="wrapper-form flex-form">
   <h2 class="h2-form">Log in</h2>
-  <div class="padding-form">
+  <div class="">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs flex-column-all">
         <%= f.input :email,
@@ -11,7 +11,7 @@
                     required: false,
                     input_html: { autocomplete: "current-password" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        <%= f.button :submit, "Log in", class: "black-button" %>
+        <%= f.button :submit, "Log in", class: "black-button", style: "width: 75vw" %>
         <br>
       </div>
     <% end %>

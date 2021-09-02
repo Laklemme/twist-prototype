@@ -1,49 +1,51 @@
 
-  <%= link_to(games_path, class: "go-back-button") do %>
-    <i class="fas fa-chevron-left"></i>
-  <% end %>
-  <div class="flex-column">
-    <div class="carousel main-carousel">
-      <div class="first-slide center-content">
+<%= link_to(games_path, class: "go-back-button") do %>
+  <i class="fas fa-chevron-left"></i>
+<% end %>
+
+<div class="flex-column">
+  <div class="carousel main-carousel">
+    <div class="first-slide center-content">
       <div class="flex-column-all center-content">
         <h1><%= @game.title %></h1>
         <%= image_tag @game.img[6..@game.img.length], class: 'card-img-big' %>
         <p> swipe through to learn more </p>
-        </div>
       </div>
-      <div class="second-slide ">
-        <% case @game.difficulty when 'easy' %>
-          <div class="difficulty-container">
-            <i class="fas fa-lightbulb green-f"></i>
-          </div>
-            <h2 class="center-h2"><%= @game.difficulty %></h2>
-        <% when 'medium' %>
-          <div class="difficulty-container">
-            <i class="fas fa-bolt yellow-f big-size"></i>
-          </div>
-            <h2 class="center-h2"><%= @game.difficulty %></h2>
-        <% when 'hard' %>
-          <div class="difficulty-container">
-            <i class="fas fa-bomb red-f"></i>
-          </div>
-            <h2 class="center-h2"><%= @game.difficulty %></h2>
-        <% end %>
-        <div class="instructions-container">
-          <p class="center-h2"><%= @game.instructions %></p>
-        </div>
-      </div>
-      <div class="third-slide">
-        <iframe width="100%" height="315"
-          src="https://www.youtube.com/embed/<%= @game.video %>"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-        </iframe>
-      </div>
+    </div>
 
-      <div class="carousel-cell carousel-big-font flex-column-all">
-        <p class="center-h2"> Do the exercise while the timer is running </p>
+    <div class="second-slide">
+      <% case @game.difficulty when 'easy' %>
+        <div class="difficulty-container">
+          <i class="fas fa-lightbulb green-f"></i>
+        </div>
+        <h2 class="center-h2"><%= @game.difficulty %></h2>
+      <% when 'medium' %>
+        <div class="difficulty-container">
+          <i class="fas fa-bolt yellow-f big-size"></i>
+        </div>
+        <h2 class="center-h2"><%= @game.difficulty %></h2>
+      <% when 'hard' %>
+        <div class="difficulty-container">
+          <i class="fas fa-bomb red-f"></i>
+        </div>
+        <h2 class="center-h2"><%= @game.difficulty %></h2>
+      <% end %>
+      <div class="instructions-container">
+        <p class="center-h2"><%= @game.instructions %></p>
       </div>
+    </div>
+    <div class="third-slide">
+      <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/<%= @game.video %>"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+    </div>
 
+    <div class="carousel-cell carousel-big-font flex-column-all">
+      <p class="center-h2"> Do the exercise while the timer is running </p>
+    </div>
   </div>
-    <%= link_to 'PLAY', game_play_sessions_path(@game), class: 'black-button', method: 'POST'%>
-  </div>
+
+  <%= link_to 'PLAY', game_play_sessions_path(@game), class: 'black-button flex-column-all', style: "width: 75vw; margin: 0 auto; margin-bottom: 20px;", method: 'POST'%>
+</div>
