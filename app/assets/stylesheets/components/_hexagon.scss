@@ -46,8 +46,8 @@ $block: '.hex-grid';
     height: 100%;
     width: 100%;
     font-size: 1.125rem;
-    color: #111111;
-    background-color: $red;
+    color: $green;
+    background-color: $white;
     clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
     display: flex;
     flex-direction: column;
@@ -128,14 +128,14 @@ $block: '.hex-grid';
   font-size: 100px;
 }
 
-.hex-sym-unlocked {
+#hex-sym-unlocked {
   color: $yellow;
-  background-color: $green;
+  background-color: $blue;
 }
 
-.hex-sym-locked {
-  color: $red;
-  background-color: $black;
+#hex-sym-locked {
+  color: $black;
+  background-color: $red;
 }
 
 .hex-grid__content p {
