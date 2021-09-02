@@ -33,3 +33,24 @@
   margin: 0;
   font-family: $headers-font;
 }
+
+.card-for-games-font-size {
+  color: $white;
+
+  border-radius: 7px;
+
+  // flex setting
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  // setting card font
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 15px;
+  padding: 15px;
+}
+
+.padding-outer-div {
+  padding: 25px 5px;
+}

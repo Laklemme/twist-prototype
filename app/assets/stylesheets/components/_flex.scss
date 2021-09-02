@@ -10,12 +10,6 @@
   align-items: center;
 }
 
-.flex-flex-fuck-it {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-}
-
 .flex-flex-flex {
   display: flex;
   align-items: center;
@@ -44,6 +38,17 @@
 
 .flexy-hexi {
   margin: 0 20px;
+  margin-bottom: 50px;
+}
+
+.flexy-hexi-zwei {
+  text-align: center;
+  margin: 20px;
+  margin-bottom: 50px;
+}
+
+.flexy-hexi-zwei h1 {
+  font-weight: bold;
 }
 
 .flex-move-bottom-right {
@@ -53,7 +58,6 @@
 
 .flex-move-bottom-right a {
   color: $white;
-  justify-content: space-evenly;
 }
 
 .spacer {
