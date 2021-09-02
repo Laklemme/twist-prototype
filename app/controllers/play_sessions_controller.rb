@@ -63,9 +63,9 @@ class PlaySessionsController < ApplicationController
     @play_sessions_count = @play_session.game.play_sessions.where(user: current_user).count
     @repetition_streaks = @play_session.game.repetition_streak(current_user)
     @number += case @play_session.game.difficulty
-                when 'easy' then 1
-                when 'medium' then 3
-                when 'hard' then 5
+               when 'easy' then 1
+               when 'medium' then 3
+               when 'hard' then 5
               end
     check_repetition_streak_redis(@play_sessions_count, @repetition_streaks)
     $redis.set("user_id[#{current_user.id}]", { coins: @number }.to_json, ex: 86_400)
@@ -73,9 +73,9 @@ class PlaySessionsController < ApplicationController
 
   def get_coins
     @coins = case @play_session.game.difficulty
-              when 'easy' then 1
-              when 'medium' then 3
-              when 'hard' then 5
+             when 'easy' then 1
+             when 'medium' then 3
+             when 'hard' then 5
              end
   end
 
