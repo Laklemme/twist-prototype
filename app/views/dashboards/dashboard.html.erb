@@ -99,15 +99,20 @@
   </div>
 
   <div class="tab-pane fade" id="toni" role="tabpanel" aria-labelledby="toni-tab">
-    <div class="flex-column-all view-height">
-      <h2>Repetition</h2>
-      <ul>
+    <div class="flex-column view-height padding-outer-div">
+      <h2 class="center-h2">Repetition</h2>
+      <ul class="padding-bottom">
         <% @games.each do |game| %>
           <li>
-          <%= game.title %> - <%= @current_repetition = game.current_repetition(current_user) %> / <%= @streak_goal = game.repetition_streak(current_user) %>
-          <% if @current_repetition.to_i == @streak_goal.to_i %>
-            <i class="fas fa-award flex-award padding-item"></i>
-          <% end %>
+            <div class="card-for-games-font-size <%= @streak_colors.shuffle[0] %>">
+              <%= image_tag game.img[6..game.img.length], class: 'card-img-big' %>
+              <div class="text-align-end">
+                <p><%= game.title %> <br> <%= @current_repetition = game.repetition_streak(current_user) %> / <%= @streak_goal = game.current_repetition(current_user) %></p>
+                <% if @current_repetition.to_i  == @streak_goal.to_i %>
+                  <i class="fas fa-award flex-award padding-item white-f"></i>
+                <% end %>
+              </div>
+            </div>
           </li>
         <% end %>
       </ul>
@@ -123,7 +128,6 @@
 <div>
   <%= link_to 'PLAY', games_path %>
 </div>
-
 
 <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
   <li class="nav-item">
@@ -144,7 +148,7 @@
   <li class="nav-item">
     <a class="nav-link" id="toni-tab" data-toggle="tab" href="#toni" role="tab" aria-controls="toni" aria-selected="false">
       <div>
-        <i class="fas fa-award flex-award padding-item"></i>
+        <i class="fas fa-award flex-award padding-item green-f"></i>
       </div>
     </a>
   </li>

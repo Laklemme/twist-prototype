@@ -4,5 +4,6 @@ class DashboardsController < ApplicationController
     @games = Game.all
     @users = User.all
     @users = @users.sort {|a,b| a.balance <=> b.balance}.reverse
+    @streak_colors = %w[green yellow red blue]
   end
 end
