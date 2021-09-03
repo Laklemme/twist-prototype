@@ -143,7 +143,7 @@
               <div class="text-align-end">
                 <p><%= game.title %> <br> <%= @streak_goal = game.current_repetition(current_user) %> / <%= @current_repetition = game.repetition_streak(current_user) %></p>
                 <% if @current_repetition.to_i  == @streak_goal.to_i %>
-                  <i class="fas fa-award flex-award padding-item white-f"></i>
+                  <i class="fas fa-award flex-award padding-item midnight-f"></i>
                 <% end %>
               </div>
             </div>
