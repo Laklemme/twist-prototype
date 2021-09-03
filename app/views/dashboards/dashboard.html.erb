@@ -135,20 +135,19 @@
       </div>
     </div>
 
-    <div class="tab-pane fade" id="toni" role="tabpanel" aria-labelledby="toni-tab">
-      <div class="flex-column">
-        <h1 class="center-h2" style="font-weight: bold; margin-top: 25px;">Repetition</h1>
-        <ul>
-          <% @games.each do |game| %>
-            <li>
-              <div class="card-for-games-font-size <%= @streak_colors.shuffle[0] %>">
-                <%= image_tag game.img[6..game.img.length], class: 'card-img-big' %>
-                <div class="text-align-end">
-                  <p><%= game.title %> <br> <%= @streak_goal = game.current_repetition(current_user) %> / <%= @current_repetition = game.repetition_streak(current_user) %></p>
-                  <% if @current_repetition.to_i  == @streak_goal.to_i %>
-                    <i class="fas fa-award flex-award padding-item white-f"></i>
-                  <% end %>
-                </div>
+  <div class="tab-pane fade" id="toni" role="tabpanel" aria-labelledby="toni-tab">
+    <div class="flex-column">
+      <h1 class="center-h2" style="font-weight: bold; margin-top: 25px;">Repetition</h1>
+      <ul>
+        <% @games.each do |game| %>
+          <li>
+            <div class="card-for-games-font-size <%= @streak_colors.shuffle[0] %>">
+              <%= image_tag game.img[6..game.img.length], class: 'card-img-big' %>
+              <div class="text-align-end">
+                <p><%= game.title %> <br> <%= @streak_goal = game.current_repetition(current_user) %> / <%= @current_repetition = game.repetition_streak(current_user) %></p>
+                <% if @current_repetition.to_i  == @streak_goal.to_i %>
+                  <i class="fas fa-award flex-award padding-item midnight-f"></i>
+                <% end %>
               </div>
             </li>
           <% end %>
