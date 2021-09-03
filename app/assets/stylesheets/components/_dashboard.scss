@@ -38,9 +38,13 @@
 
 .leaderboard-table{
   width: 90vw;
-  height: 100vw;
+  // height: 100vw;
   text-align: center;
   margin-bottom: 25px;
+}
+
+.leaderboard-table tbody {
+  font-size: 25px;
 }
 
 .view-height h1 {
@@ -55,11 +59,9 @@
   margin-bottom: 100px;
 }
 
-
 .color2 {
   background-color: #FDECF0;
 }
-
 
 .color3 {
   background-color: #06D6A0;
@@ -103,7 +105,7 @@
   text-align: center;
 }
 
-.text-align-end{
+.text-align-end {
   text-align: end;
 }
 

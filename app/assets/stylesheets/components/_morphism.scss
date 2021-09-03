@@ -11,7 +11,7 @@
   align-items: center;
   text-decoration: none;
 
-  font-size: 25px;
+  // font-size: 25px;
 }
 
 .morph-div:hover {
@@ -58,4 +58,14 @@
 
 .big-icon {
   font-size: 80px;
+}
+
+.morph-div-table {
+  border-radius: 10px;
+  background: #FFF9EB;
+  box-shadow:  20px 20px 65px #e3ded1,
+             -20px -20px 65px #ffffff;
+
+  //margin: 30px 50px;
+  padding: 30px 30px;
 }
