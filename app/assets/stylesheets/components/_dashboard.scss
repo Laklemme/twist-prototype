@@ -47,6 +47,9 @@
   // height: 100vw;
   text-align: center;
   margin-bottom: 25px;
+  .table-row {
+    color: $midnight;
+  }
 }
 
 .leaderboard-table tbody {
@@ -62,7 +65,7 @@
 }
 
 .margin-marginlara {
-  // margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .leaderboard-div {
@@ -112,6 +115,7 @@
 
 .myself {
   outline: solid 2px goldenrod;
+  color: black !important;
 }
 .padding-bottom {
   padding: 10px 0px 80px 0px;
