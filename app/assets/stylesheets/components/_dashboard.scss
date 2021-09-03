@@ -31,14 +31,28 @@
   height: 80vh;
 }
 
+.view-height a:last-child {
+  margin-bottom: 100px;
+}
+
 
 .leaderboard-table{
-  width: 70vw;
+  width: 90vw;
+  height: 100vw;
   text-align: center;
+  margin-bottom: 25px;
+}
+
+.view-height h1 {
+  font-weight: bold;
 }
 
 .color1 {
   background-color: #E2E2E2;
+}
+
+.margin-marginlara {
+  margin-bottom: 100px;
 }
 
 
@@ -91,4 +105,14 @@
 
 .text-align-end{
   text-align: end;
+}
+
+.margin-buttons {
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.margin-one-button {
+  margin: 0 auto;
+  margin-bottom: 100px;
 }
