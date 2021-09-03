@@ -2,8 +2,10 @@
 <div class="reward-container">
   <h1>Congrats</h1>
   <%= image_tag "giftbox.png", class:"giftbox" %>
-  <p> You earned <%= @counter %> today! <i class="fas fa-coins yellow-f"></i></p>
-  <div class="button-position">
-    <%= link_to "SHOW DASHBOARD", dashboard_path, class: "black-button", style: "width: 75vw" %>
+  <div class="margin-position">
+    <p> You earned </p>
+    <p class="green-f" id="coin-size"><%= @counter %> coins</p>
+    <p> today! <i class="fas fa-coins yellow-f"></i></p>
   </div>
+  <%= link_to "SHOW DASHBOARD", dashboard_path, class: "black-button", style: "width: 75vw" %>
 </div>
