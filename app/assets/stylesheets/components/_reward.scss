@@ -1,9 +1,12 @@
 .reward-container{
   background-image: url("/images/background.jpg");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  background-size: cover;
+  justify-content: center;
 }
 
 .reward-container h1 {

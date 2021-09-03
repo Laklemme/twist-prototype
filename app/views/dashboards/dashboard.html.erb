@@ -1,136 +1,139 @@
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="streaks" role="tabpanel" aria-labelledby="streaks-tab">
+<div class="dashboard">
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="streaks" role="tabpanel" aria-labelledby="streaks-tab">
 
-    <div class="flexy-hexi-zwei margin-marginlara">
-      <h1>STREAKS</h1>
-      <p>Unlock streaks by playing daily.</p>
-      <ul class="hex-grid__list flexy-hexi">
+      <div class="flexy-hexi-zwei margin-marginlara">
+        <h1>STREAKS</h1>
+        <p>Unlock streaks by playing daily.</p>
+        <ul class="hex-grid__list flexy-hexi">
 
-        <li class="hex-grid__item">
-          <% if @streak >= 3 %>
-            <div class="hex-grid__content" id="hex-sym-unlocked">
-          <% else %>
-            <div class="hex-grid__content" id="hex-sym-locked">
-          <% end %>
+          <li class="hex-grid__item">
             <% if @streak >= 3 %>
-              <p>3 days</p>
-              <i class="fas fa-award hex-sym-big"></i>
+              <div class="hex-grid__content" id="hex-sym-unlocked">
             <% else %>
-              <i class="fas fa-lock hex-sym-big"></i>
+              <div class="hex-grid__content" id="hex-sym-locked">
             <% end %>
-          </div>
-        </li>
+              <% if @streak >= 3 %>
+                <p>3 days</p>
+                <i class="fas fa-award hex-sym-big"></i>
+              <% else %>
+                <i class="fas fa-lock hex-sym-big"></i>
+              <% end %>
+            </div>
+          </li>
 
-        <li class="hex-grid__item">
-          <% if @streak >= 5 %>
-            <div class="hex-grid__content" id="hex-sym-unlocked">
-          <% else %>
-            <div class="hex-grid__content" id="hex-sym-locked">
-          <% end %>
+          <li class="hex-grid__item">
             <% if @streak >= 5 %>
-              <p>5 days</p>
-              <i class="fas fa-award hex-sym-big"></i>
+              <div class="hex-grid__content" id="hex-sym-unlocked">
             <% else %>
-              <i class="fas fa-lock hex-sym-big"></i>
+              <div class="hex-grid__content" id="hex-sym-locked">
             <% end %>
-          </div>
-        </li>
+              <% if @streak >= 5 %>
+                <p>5 days</p>
+                <i class="fas fa-award hex-sym-big"></i>
+              <% else %>
+                <i class="fas fa-lock hex-sym-big"></i>
+              <% end %>
+            </div>
+          </li>
 
-        <li class="hex-grid__item">
-          <% if @streak >= 7 %>
-            <div class="hex-grid__content" id="hex-sym-unlocked">
-          <% else %>
-            <div class="hex-grid__content" id="hex-sym-locked">
-          <% end %>
+          <li class="hex-grid__item">
             <% if @streak >= 7 %>
-              <p>7 days</p>
-              <i class="fas fa-award hex-sym-big"></i>
+              <div class="hex-grid__content" id="hex-sym-unlocked">
             <% else %>
-              <i class="fas fa-lock hex-sym-big"></i>
+              <div class="hex-grid__content" id="hex-sym-locked">
             <% end %>
-          </div>
-        </li>
+              <% if @streak >= 7 %>
+                <p>7 days</p>
+                <i class="fas fa-award hex-sym-big"></i>
+              <% else %>
+                <i class="fas fa-lock hex-sym-big"></i>
+              <% end %>
+            </div>
+          </li>
 
-        <li class="hex-grid__item">
-          <% if @streak >= 14 %>
-            <div class="hex-grid__content" id="hex-sym-unlocked">
-          <% else %>
-            <div class="hex-grid__content" id="hex-sym-locked">
-          <% end %>
+          <li class="hex-grid__item">
             <% if @streak >= 14 %>
-              <p>14 days</p>
-              <i class="fas fa-award hex-sym-big"></i>
+              <div class="hex-grid__content" id="hex-sym-unlocked">
             <% else %>
-              <i class="fas fa-lock hex-sym-big"></i>
+              <div class="hex-grid__content" id="hex-sym-locked">
             <% end %>
-          </div>
-        </li>
+              <% if @streak >= 14 %>
+                <p>14 days</p>
+                <i class="fas fa-award hex-sym-big"></i>
+              <% else %>
+                <i class="fas fa-lock hex-sym-big"></i>
+              <% end %>
+            </div>
+          </li>
 
-        <li class="hex-grid__item">
-          <% if @streak >= 30 %>
-            <div class="hex-grid__content" id="hex-sym-unlocked">
-          <% else %>
-            <div class="hex-grid__content" id="hex-sym-locked">
-          <% end %>
+          <li class="hex-grid__item">
             <% if @streak >= 30 %>
-              <p>30 days</p>
-              <i class="fas fa-award hex-sym-big"></i>
+              <div class="hex-grid__content" id="hex-sym-unlocked">
             <% else %>
-              <i class="fas fa-lock hex-sym-big"></i>
+              <div class="hex-grid__content" id="hex-sym-locked">
             <% end %>
-          </div>
-        </li>
+              <% if @streak >= 30 %>
+                <p>30 days</p>
+                <i class="fas fa-award hex-sym-big"></i>
+              <% else %>
+                <i class="fas fa-lock hex-sym-big"></i>
+              <% end %>
+            </div>
+          </li>
 
-        <li class="hex-grid__item">
-          <% if @streak >= 60 %>
-            <div class="hex-grid__content" id="hex-sym-unlocked">
-          <% else %>
-            <div class="hex-grid__content" id="hex-sym-locked">
-          <% end %>
+          <li class="hex-grid__item">
             <% if @streak >= 60 %>
-              <p>60 days</p>
-              <i class="fas fa-award hex-sym-big"></i>
+              <div class="hex-grid__content" id="hex-sym-unlocked">
             <% else %>
-              <i class="fas fa-lock hex-sym-big"></i>
+              <div class="hex-grid__content" id="hex-sym-locked">
             <% end %>
-          </div>
-        </li>
-      </ul>
+              <% if @streak >= 60 %>
+                <p>60 days</p>
+                <i class="fas fa-award hex-sym-big"></i>
+              <% else %>
+                <i class="fas fa-lock hex-sym-big"></i>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+      </div>
+
     </div>
 
-  </div>
+    <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">
+      <div class="flex-column-all leaderboard-div" style="padding-top: 20px;">
+        <h1 style="font-weight: bold;">LeaderBoard</h1>
+        <table class="leaderboard-table">
 
-  <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">
-    <div class="flex-column-all" style="padding-top: 20px;">
-      <h1 style="font-weight: bold;">LeaderBoard</h1>
-      <table class="leaderboard-table">
-
-        <tbody>
-        <% color_array = ["color1","color2","color3","color4","color5","color6","color7","color8","color9","color10"]  %>
-          <% @users.each_with_index do |user, index| %>
-            <% if index < 10 %>
-              <tr class="table-row <%= color_array[index] %> <%= "myself" if current_user.id == user.id%>">
-                <% if index == 0 %>
-                  <td> <%= image_tag("hippo-gold.png") %> </td>
-                <% elsif index == 1 %>
-                  <td> <%= image_tag("hippo-silver.png") %> </td>
-                <% elsif index == 2 %>
-                  <td> <%= image_tag("hippo-bronze.png") if index == 2%> </td>
-                <% else  %>
-                  <td> </td>
-                <% end %>
-                <td><%= index + 1 %></td>
-                <td><%= user.nickname%></td>
-                <td><%= user.balance%> <%= image_tag("coin.png") if index < 10 %></td>
-              </tr>
+          <tbody>
+          <% color_array = ["color1","color2","color3","color4","color5","color6","color7","color8","color9","color10"]  %>
+            <% @users.each_with_index do |user, index| %>
+              <% if index < 10 %>
+                <tr class="table-row <%= color_array[index] %> <%= "myself" if current_user.id == user.id%>">
+                  <% if index == 0 %>
+                    <td> <%= image_tag("hippo-gold.png") %> </td>
+                  <% elsif index == 1 %>
+                    <td> <%= image_tag("hippo-silver.png") %> </td>
+                  <% elsif index == 2 %>
+                    <td> <%= image_tag("hippo-bronze.png") if index == 2%> </td>
+                  <% else  %>
+                    <td> </td>
+                  <% end %>
+                  <td><%= index + 1 %></td>
+                  <td><%= user.nickname%></td>
+                  <td><%= user.balance%> <%= image_tag("coin.png") if index < 10 %></td>
+                </tr>
+              <% end %>
             <% end %>
-          <% end %>
-        </tbody>
-      </table>
-      <%= link_to 'PLAY', games_path, class: 'black-button margin-buttons' %>
-      <%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE', class: 'black-button margin-one-button' %>
+          </tbody>
+        </table>
+        <div class="button-links">
+          <%= link_to 'PLAY', games_path, class: 'black-button margin-buttons' %>
+          <%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE', class: 'black-button margin-one-button' %>
+        </div>
+      </div>
     </div>
-  </div>
 
   <div class="tab-pane fade" id="toni" role="tabpanel" aria-labelledby="toni-tab">
     <div class="flex-column">
@@ -143,43 +146,44 @@
               <div class="text-align-end">
                 <p><%= game.title %> <br> <%= @streak_goal = game.current_repetition(current_user) %> / <%= @current_repetition = game.repetition_streak(current_user) %></p>
                 <% if @current_repetition.to_i  == @streak_goal.to_i %>
-                  <i class="fas fa-award flex-award padding-item white-f"></i>
+                  <i class="fas fa-award flex-award padding-item midnight-f"></i>
                 <% end %>
               </div>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-      <%= link_to 'PLAY', games_path, class: 'black-button margin-buttons' %>
-      <%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE', class: 'black-button margin-one-button' %>
+            </li>
+          <% end %>
+        </ul>
+        <%= link_to 'PLAY', games_path, class: 'black-button margin-buttons' %>
+        <%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE', class: 'black-button margin-one-button' %>
+      </div>
     </div>
+
   </div>
 
+
+
+  <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="streaks-tab" data-toggle="tab" href="#streaks" role="tab" aria-controls="streaks" aria-selected="true">
+        <div>
+          <i class="fas fa-trophy flex-trophy padding-item"></i>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="leaderboard-tab" data-toggle="tab" href="#leaderboard" role="tab" aria-controls="leaderboard" aria-selected="false">
+        <div class="flex-for-cards">
+          <i class="fas fa-coins flex-coins padding-item"></i>
+          <p class="padding-p"><%= current_user.balance %></p>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="toni-tab" data-toggle="tab" href="#toni" role="tab" aria-controls="toni" aria-selected="false">
+        <div>
+          <i class="fas fa-award flex-award padding-item green-f"></i>
+        </div>
+      </a>
+    </li>
+  </ul>
+
 </div>
-
-
-
-<ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="streaks-tab" data-toggle="tab" href="#streaks" role="tab" aria-controls="streaks" aria-selected="true">
-      <div>
-        <i class="fas fa-trophy flex-trophy padding-item"></i>
-      </div>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="leaderboard-tab" data-toggle="tab" href="#leaderboard" role="tab" aria-controls="leaderboard" aria-selected="false">
-      <div class="flex-for-cards">
-        <i class="fas fa-coins flex-coins padding-item"></i>
-        <p class="padding-p"><%= current_user.balance %></p>
-      </div>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="toni-tab" data-toggle="tab" href="#toni" role="tab" aria-controls="toni" aria-selected="false">
-      <div>
-        <i class="fas fa-award flex-award padding-item green-f"></i>
-      </div>
-    </a>
-  </li>
-</ul>
