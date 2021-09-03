@@ -1,9 +1,10 @@
 .home-container{
   background-image: url("/images/background.jpg");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 120vh;
+  height: 100vh;
 }
 
 .home-container h1 {
@@ -18,4 +19,9 @@
   color: whitesmoke;
   text-decoration: none;
   padding-top: 2rem;
+}
+
+
+.full-height {
+  height: 100vh;
 }
