@@ -1,7 +1,7 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="streaks" role="tabpanel" aria-labelledby="streaks-tab">
 
-    <div class="flexy-hexi-zwei">
+    <div class="flexy-hexi-zwei margin-marginlara">
       <h1>STREAKS</h1>
       <p>Unlock streaks by playing daily.</p>
       <ul class="hex-grid__list flexy-hexi">
@@ -99,35 +99,43 @@
     </div>
 
   </div>
+
   <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">
-    <div class="flex-column-all view-height">
-      <h1>LeaderBoard</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Position</th>
-            <th>Nickname</th>
-            <th>Coins</th>
-          </tr>
-        </thead>
+    <div class="flex-column-all" style="padding-top: 20px;">
+      <h1 style="font-weight: bold;">LeaderBoard</h1>
+      <table class="leaderboard-table">
 
         <tbody>
+        <% color_array = ["color1","color2","color3","color4","color5","color6","color7","color8","color9","color10"]  %>
           <% @users.each_with_index do |user, index| %>
-            <tr>
-              <td><%= index + 1 %></td>
-              <td><%= user.nickname%></td>
-              <td><%= user.balance%></td>
-            </tr>
+            <% if index < 10 %>
+              <tr class="table-row <%= color_array[index] %> <%= "myself" if current_user.id == user.id%>">
+                <% if index == 0 %>
+                  <td> <%= image_tag("hippo-gold.png") %> </td>
+                <% elsif index == 1 %>
+                  <td> <%= image_tag("hippo-silver.png") %> </td>
+                <% elsif index == 2 %>
+                  <td> <%= image_tag("hippo-bronze.png") if index == 2%> </td>
+                <% else  %>
+                  <td> </td>
+                <% end %>
+                <td><%= index + 1 %></td>
+                <td><%= user.nickname%></td>
+                <td><%= user.balance%> <%= image_tag("coin.png") if index < 10 %></td>
+              </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
+      <%= link_to 'PLAY', games_path, class: 'black-button margin-buttons' %>
+      <%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE', class: 'black-button margin-one-button' %>
     </div>
   </div>
 
   <div class="tab-pane fade" id="toni" role="tabpanel" aria-labelledby="toni-tab">
-    <div class="flex-column view-height padding-outer-div">
-      <h2 class="center-h2">Repetition</h2>
-      <ul class="padding-bottom">
+    <div class="flex-column">
+      <h1 class="center-h2" style="font-weight: bold; margin-top: 25px;">Repetition</h1>
+      <ul>
         <% @games.each do |game| %>
           <li>
             <div class="card-for-games-font-size <%= @streak_colors.shuffle[0] %>">
@@ -142,18 +150,14 @@
           </li>
         <% end %>
       </ul>
+      <%= link_to 'PLAY', games_path, class: 'black-button margin-buttons' %>
+      <%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE', class: 'black-button margin-one-button' %>
     </div>
   </div>
 
 </div>
 
-<div class="flex-move-bottom-right">
-  <%= link_to 'LOGOUT', destroy_user_session_path, method: 'DELETE' %>
-</div>
 
-<div>
-  <%= link_to 'PLAY', games_path %>
-</div>
 
 <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
   <li class="nav-item">
