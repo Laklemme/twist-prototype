@@ -8,13 +8,13 @@
         <ul class="hex-grid__list flexy-hexi">
 
           <li class="hex-grid__item">
-            <% if @streak >= 3 %>
+            <% if @streak >= 5 %>
               <div class="hex-grid__content" id="hex-sym-unlocked">
             <% else %>
               <div class="hex-grid__content" id="hex-sym-locked">
             <% end %>
-              <% if @streak >= 3 %>
-                <p>3 days</p>
+              <% if @streak >= 5 %>
+                <p>5 days</p>
                 <i class="fas fa-award hex-sym-big"></i>
               <% else %>
                 <i class="fas fa-lock hex-sym-big"></i>
@@ -23,13 +23,13 @@
           </li>
 
           <li class="hex-grid__item">
-            <% if @streak >= 5 %>
+            <% if @streak >= 3 %>
               <div class="hex-grid__content" id="hex-sym-unlocked">
             <% else %>
               <div class="hex-grid__content" id="hex-sym-locked">
             <% end %>
-              <% if @streak >= 5 %>
-                <p>5 days</p>
+              <% if @streak >= 3 %>
+                <p>3 days</p>
                 <i class="fas fa-award hex-sym-big"></i>
               <% else %>
                 <i class="fas fa-lock hex-sym-big"></i>
