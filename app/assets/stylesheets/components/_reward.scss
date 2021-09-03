@@ -9,15 +9,14 @@
 .reward-container h1 {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: bold;
-  font-size: 5em;
+  font-size: 69px;
   margin-top: 1em;
 }
 
 .reward-container p {
   font-family: 'Amatic SC', 'cursive';
   font-weight: bold;
-  font-size: 1,5em;
-  margin-top: 6em;
+  font-size: 35px;
 }
 
 .show-results-button {
@@ -45,11 +44,19 @@
   color: white;
 }
 
-.button-position {
-  margin-top: 7em;
+.margin-position {
+  margin: 40px 0px 70px 0px;
+
 }
 
 .giftbox {
   width: 8em;
-  margin-top: 2em;
+}
+
+.margin-position p {
+  margin-bottom: 0px;
+}
+
+#coin-size {
+  font-size: 48px;
 }
