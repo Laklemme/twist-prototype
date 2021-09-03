@@ -25,8 +25,9 @@ class PlaySessionsController < ApplicationController
     flash.now[:notice] =  if @play_sessions_count.to_i == @repetition_streaks.to_i
                             "Wow! Streak of #{@play_sessions_count}! 🎉 You just earned 5 more coins!"
                           else
-                            "You played this game #{@play_sessions_count} time(s).
-                            Play #{@repetition_streaks.to_i - @play_sessions_count.to_i} more time(s) to get a streak!"
+                            streak_count = @repetition_streaks.to_i - @play_sessions_count.to_i
+                            "You played this game #{@play_sessions_count} #{'time'.pluralize(@play_sessions_count)}.
+                            Play #{streak_count} more #{'time'.pluralize(streak_count)} to get a streak!"
                           end
 
     @get_counter = $redis.get("user_id[#{current_user.id}]")
